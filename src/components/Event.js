@@ -5,7 +5,7 @@ import parameterize from "parameterize";
 
 const Event = ({ event }) => {
   return (
-    <div className="flex bg-brand-primary-100 p-4 px-5">
+    <div className="flex bg-brand-primary-100 p-4 px-5 border-b border-brand-primary-200 last:border-b-0">
       <div className="w-3/5 flex text-gray-100 text-xs">
         <div className="time w-1/4">{event.kickoff}</div>
         <div className="teams flex flex-col  w-3/4 justify-between">

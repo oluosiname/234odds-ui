@@ -11,6 +11,7 @@ module.exports = {
       brand: {
         primary: {
           100: "#1b1e24",
+          200: "#14161b",
         },
       },
       white: "#ffffff",
@@ -21,7 +22,9 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      borderWidth: ["first", "last"],
+    },
   },
   plugins: [],
 };
