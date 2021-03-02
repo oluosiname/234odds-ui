@@ -16,10 +16,15 @@ module.exports = {
       },
       white: "#ffffff",
     },
+
     fontFamily: {
       roboto: ["Roboto", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      fontSize: {
+        xxs: "0.625rem",
+      },
+    },
   },
   variants: {
     extend: {

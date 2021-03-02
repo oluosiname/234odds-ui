@@ -2,6 +2,7 @@ import "./App.css";
 import Icon from "./components/Icon/Icon";
 
 import Event from "./components/Event";
+import HeaderLinks from "./components/HeaderLinks";
 
 function App() {
   const events = [
@@ -68,87 +69,87 @@ function App() {
       draw_odds: 3.26,
       kickoff: "16:30",
     },
-    {
-      id: 9,
-      home_team: "Liverpool",
-      away_team: "Wolves",
-      home_odds: 1.88,
-      away_odds: 2.63,
-      draw_odds: 4.01,
-      kickoff: "11:59",
-    },
-    {
-      id: 10,
-      home_team: "Southampton",
-      away_team: "West Brom",
-      home_odds: 2.09,
-      away_odds: 3.28,
-      draw_odds: 1.79,
-      kickoff: "12:50",
-    },
-    {
-      id: 12,
-      home_team: "Manchester City",
-      away_team: "Newcastle",
-      home_odds: 3.74,
-      away_odds: 3.95,
-      draw_odds: 2.58,
-      kickoff: "18:22",
-    },
-    {
-      id: 13,
-      home_team: "Aston Villa",
-      away_team: "Newcastle",
-      home_odds: 4.01,
-      away_odds: 2.56,
-      draw_odds: 3.17,
-      kickoff: "9:14",
-    },
-    {
-      id: 14,
-      home_team: "Tottenham",
-      away_team: "Leeds",
-      home_odds: 1.16,
-      away_odds: 2.77,
-      draw_odds: 4.11,
-      kickoff: "2:01",
-    },
-    {
-      id: 15,
-      home_team: "Sheffield United",
-      away_team: "Burnley",
-      home_odds: 3.33,
-      away_odds: 3.64,
-      draw_odds: 3.13,
-      kickoff: "11:10",
-    },
-    {
-      id: 16,
-      home_team: "Newcastle",
-      away_team: "Fulham",
-      home_odds: 3.87,
-      away_odds: 1.95,
-      draw_odds: 4.17,
-      kickoff: "15:54",
-    },
-    {
-      id: 17,
-      home_team: "Arsenal",
-      away_team: "Aston Villa",
-      home_odds: 1.28,
-      away_odds: 1.33,
-      draw_odds: 1.61,
-      kickoff: "11:15",
-    },
-    {
-      id: 18,
-      home_team: "Leeds",
-      away_team: "Everton",
-      home_odds: 4.12,
-      away_odds: 2.33,
-      draw_odds: 1.41,
-      kickoff: "11:00",
-    },
+    // {
+    //   id: 9,
+    //   home_team: "Liverpool",
+    //   away_team: "Wolves",
+    //   home_odds: 1.88,
+    //   away_odds: 2.63,
+    //   draw_odds: 4.01,
+    //   kickoff: "11:59",
+    // },
+    // {
+    //   id: 10,
+    //   home_team: "Southampton",
+    //   away_team: "West Brom",
+    //   home_odds: 2.09,
+    //   away_odds: 3.28,
+    //   draw_odds: 1.79,
+    //   kickoff: "12:50",
+    // },
+    // {
+    //   id: 12,
+    //   home_team: "Manchester City",
+    //   away_team: "Newcastle",
+    //   home_odds: 3.74,
+    //   away_odds: 3.95,
+    //   draw_odds: 2.58,
+    //   kickoff: "18:22",
+    // },
+    // {
+    //   id: 13,
+    //   home_team: "Aston Villa",
+    //   away_team: "Newcastle",
+    //   home_odds: 4.01,
+    //   away_odds: 2.56,
+    //   draw_odds: 3.17,
+    //   kickoff: "9:14",
+    // },
+    // {
+    //   id: 14,
+    //   home_team: "Tottenham",
+    //   away_team: "Leeds",
+    //   home_odds: 1.16,
+    //   away_odds: 2.77,
+    //   draw_odds: 4.11,
+    //   kickoff: "2:01",
+    // },
+    // {
+    //   id: 15,
+    //   home_team: "Sheffield United",
+    //   away_team: "Burnley",
+    //   home_odds: 3.33,
+    //   away_odds: 3.64,
+    //   draw_odds: 3.13,
+    //   kickoff: "11:10",
+    // },
+    // {
+    //   id: 16,
+    //   home_team: "Newcastle",
+    //   away_team: "Fulham",
+    //   home_odds: 3.87,
+    //   away_odds: 1.95,
+    //   draw_odds: 4.17,
+    //   kickoff: "15:54",
+    // },
+    // {
+    //   id: 17,
+    //   home_team: "Arsenal",
+    //   away_team: "Aston Villa",
+    //   home_odds: 1.28,
+    //   away_odds: 1.33,
+    //   draw_odds: 1.61,
+    //   kickoff: "11:15",
+    // },
+    // {
+    //   id: 18,
+    //   home_team: "Leeds",
+    //   away_team: "Everton",
+    //   home_odds: 4.12,
+    //   away_odds: 2.33,
+    //   draw_odds: 1.41,
+    //   kickoff: "11:00",
+    // },
     {
       id: 19,
       home_team: "Everton",
@@ -168,12 +169,33 @@ function App() {
       kickoff: "18:40",
     },
   ];
+
   return (
     <div className="font-roboto ">
+      <HeaderLinks />
       <div className="league-odds">
         <div className="w-full bg-gray-200 text-gray-100 uppercase text-xs align-middle p-2 px-5 flex items-center space-x-4">
-          <Icon name="icon-england" className="w-4" />
+          {/* <Icon name="icon-england" className="w-4" /> */}
+          <Icon name="icon-premier-league" className="w-4" />
           <span>PREMIER LEAGUE</span>
+        </div>
+        <div className="flex bg-gray-300 p-1 px-5">
+          <div className="w-3/5 text-xs text-gray-100">Today</div>
+          <div className="w-2/5 text-xs text-gray-100 space-x-2">
+            <span className="px-1">Home</span>
+            <span className=" px-1">Draw</span>
+            <span className="px-1">Away</span>
+          </div>
+        </div>
+        {events.map((event) => {
+          return <Event event={event} key={event.id.toString()} />;
+        })}
+      </div>
+      <div className="league-odds">
+        <div className="w-full bg-gray-200 text-gray-100 uppercase text-xs align-middle p-2 px-5 flex items-center space-x-4">
+          {/* <Icon name="icon-england" className="w-4" /> */}
+          <Icon name="icon-la-liga" className="w-4" />
+          <span>La Liga</span>
         </div>
         <div className="flex bg-gray-300 p-1 px-5">
           <div className="w-3/5 text-xs text-gray-100">Today</div>
