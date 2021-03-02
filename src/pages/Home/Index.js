@@ -1,10 +1,9 @@
-import "./App.css";
-import Icon from "./components/Icon/Icon";
+import React from "react";
 
-import HeaderLinks from "./components/HeaderLinks";
-import EventsBlock from "./components/EventsBlock";
+import HeaderLinks from "./HeaderLinks";
+import EventsBlock from "./EventsBlock";
 
-function App() {
+const Index = () => {
   const events = [
     {
       id: 2,
@@ -176,6 +175,6 @@ function App() {
       <EventsBlock events={events} />
     </div>
   );
-}
+};
 
-export default App;
+export default Index;

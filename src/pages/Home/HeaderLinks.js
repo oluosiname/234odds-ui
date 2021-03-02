@@ -1,6 +1,6 @@
 import React from "react";
 import parameterize from "parameterize";
-import Icon from "./Icon/Icon";
+import Icon from "../../components/Icon/Icon";
 
 const HeaderLinks = () => {
   const leagues = [
