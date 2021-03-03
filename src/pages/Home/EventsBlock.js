@@ -1,6 +1,6 @@
 import React from "react";
 import Icon from "../../components/Icon/Icon";
-import Event from "./Event";
+import EventLine from "./EventLine";
 
 const EventsBlock = ({ events }) => {
   return (
@@ -19,7 +19,7 @@ const EventsBlock = ({ events }) => {
         </div>
       </div>
       {events.map((event) => {
-        return <Event event={event} key={event.id.toString()} />;
+        return <EventLine event={event} key={event.id.toString()} />;
       })}
     </div>
   );

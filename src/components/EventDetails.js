@@ -7,7 +7,7 @@ import merrybet from "../assets/images/merrybet.svg";
 import betking from "../assets/images/betking.svg";
 import Icon from "./Icon/Icon";
 
-const EventDetails = () => {
+const EventDetails = ({ event }) => {
   const bookmakers = {
     nairabet: nairabet,
     bet9ja: bet9ja,
@@ -27,12 +27,28 @@ const EventDetails = () => {
     }
     return "w-20";
   }
+
+  if (!event.uid) {
+    return <div></div>;
+  }
   return (
     <div className="md:sticky md:top-0  bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 h-screen">
       <div className="bg-gray-300 py-3 px-5 uppercase text-gray-100 flex justify-between  space-x-2">
-        <TopOdds odds={1.25} bookmaker={"nairabet"} kind={"Home"} />
-        <TopOdds odds={3.05} bookmaker={"bet9ja"} kind={"draw"} />
-        <TopOdds odds={4.22} bookmaker={"nairabet"} kind={"away"} />
+        <TopOdds
+          odds={event.top_odds.home}
+          bookmaker={"nairabet"}
+          kind={"Home"}
+        />
+        <TopOdds
+          odds={event.top_odds.draw}
+          bookmaker={"bet9ja"}
+          kind={"draw"}
+        />
+        <TopOdds
+          odds={event.top_odds.away}
+          bookmaker={"nairabet"}
+          kind={"away"}
+        />
       </div>
       <div className="flex flex-col  p-2  space-y-4">
         <h6 className="text-xs text-center">FORM</h6>
@@ -41,7 +57,7 @@ const EventDetails = () => {
             <Icon name={`icon-arsenal`} className="w-4" size="1.2rem" />
           </span>
 
-          {["W", "D", "L", "W", "D"].map((o) => {
+          {event.home_form.map((o) => {
             return <FormOutcome outcome={o} />;
           })}
         </div>
@@ -50,7 +66,7 @@ const EventDetails = () => {
             <Icon name={`icon-manchester-city`} className="w-4" size="1.2rem" />
           </span>
 
-          {["W", "W", "L", "W", "W"].map((o) => {
+          {event.away_form.map((o) => {
             return <FormOutcome outcome={o} />;
           })}
         </div>
@@ -65,20 +81,44 @@ const EventDetails = () => {
           <span className="px-3 py-3">2</span>
         </div>
       </div>
-      {Object.keys(bookmakers).map((bookmaker) => {
+      {event.odds.map((bookmaker_odds, i) => {
         return (
-          <div className="flex p-1.5 items-center">
+          <div className="flex p-1.5 items-center" key={i.toString()}>
             <div className="w-1/3">
               <img
-                src={bookmakers[bookmaker]}
-                className={imageClassName(bookmaker)}
-                alt={bookmaker}
+                src={bookmakers[bookmaker_odds.bookmaker]}
+                className={imageClassName(bookmaker_odds.bookmaker)}
+                alt={bookmaker_odds.bookmaker}
               />
             </div>
             <div className="w-2/3 text-xs text-gray-100 space-x-3 flex text-white justify-end font-medium">
-              <span className="bg-gray-300 flex rounded-md p-3">1.30</span>
-              <span className="bg-gray-300 flex rounded-md p-3">3.44</span>
-              <span className="bg-blue flex rounded-md p-3">2.75</span>
+              <span
+                className={`${
+                  event.top_odds.home === bookmaker_odds.home
+                    ? "bg-blue"
+                    : "bg-gray-300"
+                } flex rounded-md p-3`}
+              >
+                {bookmaker_odds.home}
+              </span>
+              <span
+                className={`${
+                  event.top_odds.draw === bookmaker_odds.draw
+                    ? "bg-blue"
+                    : "bg-gray-300"
+                } flex rounded-md p-3`}
+              >
+                {bookmaker_odds.draw}
+              </span>
+              <span
+                className={`${
+                  event.top_odds.away === bookmaker_odds.away
+                    ? "bg-blue"
+                    : "bg-gray-300"
+                } flex rounded-md p-3`}
+              >
+                {bookmaker_odds.away}
+              </span>
             </div>
           </div>
         );

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import parameterize from "parameterize";
 
-const Event = ({ event }) => {
+const EventLine = ({ event }) => {
   return (
     <Link to={`/events/${event.id}`}>
       <div className="flex bg-brand-primary-100 p-4 px-5 border-b border-brand-primary-200 ">
@@ -47,4 +47,4 @@ const Event = ({ event }) => {
   );
 };
 
-export default Event;
+export default EventLine;

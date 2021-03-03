@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 
+export const Betking = props => <Icon {...props} name="betking" />;
 export const IconArsenal = props => <Icon {...props} name="icon-arsenal" />;
 export const IconAstonVilla = props => <Icon {...props} name="icon-aston-villa" />;
 export const IconBarnsley = props => <Icon {...props} name="icon-barnsley" />;
@@ -12,6 +13,8 @@ export const IconBournemouth = props => <Icon {...props} name="icon-bournemouth"
 export const IconBrighton = props => <Icon {...props} name="icon-brighton" />;
 export const IconBundesliga = props => <Icon {...props} name="icon-bundesliga" />;
 export const IconBurnley = props => <Icon {...props} name="icon-burnley" />;
+export const IconCalenda = props => <Icon {...props} name="icon-calenda" />;
+export const IconCalendar = props => <Icon {...props} name="icon-calendar" />;
 export const IconChampionsLeague = props => <Icon {...props} name="icon-champions-league" />;
 export const IconChelsea = props => <Icon {...props} name="icon-chelsea" />;
 export const IconCrystalPalace = props => <Icon {...props} name="icon-crystal-palace" />;
@@ -37,6 +40,9 @@ export const IconSerieA = props => <Icon {...props} name="icon-serie-a" />;
 export const IconSheffieldUnited = props => <Icon {...props} name="icon-sheffield-united" />;
 export const IconSouthampton = props => <Icon {...props} name="icon-southampton" />;
 export const IconSportybet = props => <Icon {...props} name="icon-sportybet" />;
+export const IconToda = props => <Icon {...props} name="icon-toda" />;
+export const IconToday = props => <Icon {...props} name="icon-today" />;
+export const IconTodays = props => <Icon {...props} name="icon-todays" />;
 export const IconTottenham = props => <Icon {...props} name="icon-tottenham" />;
 export const IconWatford = props => <Icon {...props} name="icon-watford" />;
 export const IconWestBrom = props => <Icon {...props} name="icon-west-brom" />;
@@ -44,3 +50,4 @@ export const IconWestHam = props => <Icon {...props} name="icon-west-ham" />;
 export const IconWigan = props => <Icon {...props} name="icon-wigan" />;
 export const IconWolves = props => <Icon {...props} name="icon-wolves" />;
 export const IconWycombe = props => <Icon {...props} name="icon-wycombe" />;
+export const Merrybet = props => <Icon {...props} name="merrybet" />;

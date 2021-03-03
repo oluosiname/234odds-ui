@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import HeaderLinks from "./HeaderLinks";
 import EventsBlock from "./EventsBlock";
@@ -6,6 +6,24 @@ import EventDetails from "../../components/EventDetails";
 import Icon from "../../components/Icon/Icon";
 
 const Index = () => {
+  const [selectedEvent, setSelectedEvent] = useState({
+    uid: "3456UISS",
+    top_odds: {
+      home: 1.25,
+      draw: 3.05,
+      away: 2.33,
+    },
+    home_form: ["W", "D", "L", "W", "D"],
+    away_form: ["W", "W", "L", "W", "W"],
+    odds: [
+      { bookmaker: "nairabet", home: 1.35, away: 2.32, draw: 3.05 },
+      { bookmaker: "merrybet", home: 1.25, away: 2.33, draw: 3.28 },
+      { bookmaker: "naijabet", home: 1.25, away: 2.45, draw: 3.33 },
+      { bookmaker: "sportybet", home: 1.35, away: 2.32, draw: 3.21 },
+      { bookmaker: "bet9ja", home: 1.11, away: 2.33, draw: 3.98 },
+      { bookmaker: "betking", home: 1.25, away: 2.25, draw: 3.34 },
+    ],
+  });
   const events = [
     {
       id: 2,
@@ -181,54 +199,32 @@ const Index = () => {
         >
           <div className="bg-gray-300 py-3 px-5 uppercase text-gray-100 flex space-x-4">
             <div className="flex py-2 px-3 rounded-3xl text-xxs tracking-wide whitespace-nowrap items-center space-x-2 border  border-gray-100">
+              <span>
+                <Icon name="icon-today" />
+              </span>
               <span>Today</span>
             </div>
             <div className="flex py-2 px-3 rounded-3xl text-xxs tracking-wide whitespace-nowrap items-center space-x-2 border  border-gray-100">
+              <span>
+                <Icon name="icon-calendar" />
+              </span>
               <span>Mar 24</span>
             </div>
             <div className="flex py-2 px-3 rounded-3xl text-xxs tracking-wide whitespace-nowrap items-center space-x-2 border  border-gray-100">
+              <span>
+                <Icon name="icon-calendar" />
+              </span>
               <span>Mar 25</span>
-            </div>
-            <div className="flex py-2 px-3 rounded-3xl text-xxs tracking-wide whitespace-nowrap items-center space-x-2 border  border-gray-100">
-              <span>Mar 26</span>
             </div>
           </div>
           <EventsBlock events={events} />
         </section>
 
         <section id="event-details" className="w-full md:w-1/3 hidden md:block">
-          <EventDetails />
+          <EventDetails event={selectedEvent} />
         </section>
       </section>
     </div>
-    // <div className="font-roboto  md:w-9/12 md:m-auto bg-brand-primary-100 shadow-2xl rounded overflow-hidden border border-gray-300">
-    //   <HeaderLinks />
-    //   <section className="events flex flex-wrap justify-between shadow-2xl">
-    //     <section
-    //       id="event-list"
-    //       className="w-full md:w-2/3  border-r border-gray-300"
-    //     >
-    //       <div className="bg-gray-300 py-3 px-5 uppercase text-gray-100 flex space-x-4">
-    //         <div className="flex py-2 px-3 rounded-3xl text-xxs tracking-wide whitespace-nowrap items-center space-x-2 border  border-gray-100">
-    //           <span>Today</span>
-    //         </div>
-    //         <div className="flex py-2 px-3 rounded-3xl text-xxs tracking-wide whitespace-nowrap items-center space-x-2 border  border-gray-100">
-    //           <span>Mar 24</span>
-    //         </div>
-    //         <div className="flex py-2 px-3 rounded-3xl text-xxs tracking-wide whitespace-nowrap items-center space-x-2 border  border-gray-100">
-    //           <span>Mar 25</span>
-    //         </div>
-    //         <div className="flex py-2 px-3 rounded-3xl text-xxs tracking-wide whitespace-nowrap items-center space-x-2 border  border-gray-100">
-    //           <span>Mar 26</span>
-    //         </div>
-    //       </div>
-    //       <EventsBlock events={events} />
-    //     </section>
-    //     <section id="event-details" className="w-full md:w-1/3 hidden md:block">
-    //       <EventDetails />
-    //     </section>
-    //   </section>
-    // </div>
   );
 };
 

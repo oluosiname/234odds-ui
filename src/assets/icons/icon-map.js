@@ -1,3 +1,4 @@
+import { ReactComponent as Betking } from '../images/betking.svg';
 import { ReactComponent as IconArsenal } from '../images/icon-arsenal.svg';
 import { ReactComponent as IconAstonVilla } from '../images/icon-aston-villa.svg';
 import { ReactComponent as IconBarnsley } from '../images/icon-barnsley.svg';
@@ -9,6 +10,8 @@ import { ReactComponent as IconBournemouth } from '../images/icon-bournemouth.sv
 import { ReactComponent as IconBrighton } from '../images/icon-brighton.svg';
 import { ReactComponent as IconBundesliga } from '../images/icon-bundesliga.svg';
 import { ReactComponent as IconBurnley } from '../images/icon-burnley.svg';
+import { ReactComponent as IconCalenda } from '../images/icon-calenda.svg';
+import { ReactComponent as IconCalendar } from '../images/icon-calendar.svg';
 import { ReactComponent as IconChampionsLeague } from '../images/icon-champions-league.svg';
 import { ReactComponent as IconChelsea } from '../images/icon-chelsea.svg';
 import { ReactComponent as IconCrystalPalace } from '../images/icon-crystal-palace.svg';
@@ -34,6 +37,9 @@ import { ReactComponent as IconSerieA } from '../images/icon-serie-a.svg';
 import { ReactComponent as IconSheffieldUnited } from '../images/icon-sheffield-united.svg';
 import { ReactComponent as IconSouthampton } from '../images/icon-southampton.svg';
 import { ReactComponent as IconSportybet } from '../images/icon-sportybet.svg';
+import { ReactComponent as IconToda } from '../images/icon-toda.svg';
+import { ReactComponent as IconToday } from '../images/icon-today.svg';
+import { ReactComponent as IconTodays } from '../images/icon-todays.svg';
 import { ReactComponent as IconTottenham } from '../images/icon-tottenham.svg';
 import { ReactComponent as IconWatford } from '../images/icon-watford.svg';
 import { ReactComponent as IconWestBrom } from '../images/icon-west-brom.svg';
@@ -41,8 +47,10 @@ import { ReactComponent as IconWestHam } from '../images/icon-west-ham.svg';
 import { ReactComponent as IconWigan } from '../images/icon-wigan.svg';
 import { ReactComponent as IconWolves } from '../images/icon-wolves.svg';
 import { ReactComponent as IconWycombe } from '../images/icon-wycombe.svg';
+import { ReactComponent as Merrybet } from '../images/merrybet.svg';
 
 export default {
+"betking": Betking, 
 "icon-arsenal": IconArsenal, 
 "icon-aston-villa": IconAstonVilla, 
 "icon-barnsley": IconBarnsley, 
@@ -54,6 +62,8 @@ export default {
 "icon-brighton": IconBrighton, 
 "icon-bundesliga": IconBundesliga, 
 "icon-burnley": IconBurnley, 
+"icon-calenda": IconCalenda, 
+"icon-calendar": IconCalendar, 
 "icon-champions-league": IconChampionsLeague, 
 "icon-chelsea": IconChelsea, 
 "icon-crystal-palace": IconCrystalPalace, 
@@ -79,6 +89,9 @@ export default {
 "icon-sheffield-united": IconSheffieldUnited, 
 "icon-southampton": IconSouthampton, 
 "icon-sportybet": IconSportybet, 
+"icon-toda": IconToda, 
+"icon-today": IconToday, 
+"icon-todays": IconTodays, 
 "icon-tottenham": IconTottenham, 
 "icon-watford": IconWatford, 
 "icon-west-brom": IconWestBrom, 
@@ -86,4 +99,5 @@ export default {
 "icon-wigan": IconWigan, 
 "icon-wolves": IconWolves, 
 "icon-wycombe": IconWycombe, 
+"merrybet": Merrybet, 
 };
