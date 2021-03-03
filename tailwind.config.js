@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
@@ -7,7 +7,7 @@ module.exports = {
         100: "#c5c5c5",
         200: "#343a43",
         300: "#272a30",
-        400: "#6F8CAA",
+        400: "#6f8caa",
       },
       brand: {
         primary: {
@@ -18,8 +18,8 @@ module.exports = {
       blue: "#129AB7",
       white: "#ffffff",
       black: "#000000",
-      green: "#2BD299",
-      red: "#F33D59",
+      green: "#2bd299",
+      red: "#f33d59",
     },
 
     fontFamily: {
