@@ -7,6 +7,7 @@ module.exports = {
         100: "#c5c5c5",
         200: "#343a43",
         300: "#272a30",
+        400: "#6F8CAA",
       },
       brand: {
         primary: {
@@ -16,6 +17,9 @@ module.exports = {
       },
       blue: "#129AB7",
       white: "#ffffff",
+      black: "#000000",
+      green: "#2BD299",
+      red: "#F33D59",
     },
 
     fontFamily: {

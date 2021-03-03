@@ -31,7 +31,7 @@ const Event = ({ event }) => {
             </div>
           </div>
         </div>
-        <div className="w-2/5 text-xs text-gray-100 space-x-2 flex text-white">
+        <div className="w-2/5 text-xs text-gray-100 space-x-2 flex text-white justify-end">
           <span className="bg-gray-300 flex rounded-md px-2 py-3">
             {event.home_odds}
           </span>

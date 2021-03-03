@@ -11,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <main className="bg-brand-primary-100 min-h-screen h-100">
+        <main className="bg-black min-h-screen h-100 md:pt-12">
           <Route exact path="/">
             <Home />
           </Route>
