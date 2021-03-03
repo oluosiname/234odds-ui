@@ -1,6 +1,9 @@
 import { ReactComponent as IconArsenal } from '../images/icon-arsenal.svg';
 import { ReactComponent as IconAstonVilla } from '../images/icon-aston-villa.svg';
 import { ReactComponent as IconBarnsley } from '../images/icon-barnsley.svg';
+import { ReactComponent as IconBetJa } from '../images/icon-bet9ja.svg';
+import { ReactComponent as IconBetking } from '../images/icon-betking.svg';
+import { ReactComponent as IconBetnaija } from '../images/icon-betnaija.svg';
 import { ReactComponent as IconBirmingham } from '../images/icon-birmingham.svg';
 import { ReactComponent as IconBournemouth } from '../images/icon-bournemouth.svg';
 import { ReactComponent as IconBrighton } from '../images/icon-brighton.svg';
@@ -20,13 +23,17 @@ import { ReactComponent as IconLigueOne } from '../images/icon-ligue-one.svg';
 import { ReactComponent as IconLiverpool } from '../images/icon-liverpool.svg';
 import { ReactComponent as IconManchesterCity } from '../images/icon-manchester-city.svg';
 import { ReactComponent as IconManchesterUnited } from '../images/icon-manchester-united.svg';
+import { ReactComponent as IconMerrybet } from '../images/icon-merrybet.svg';
 import { ReactComponent as IconMillwall } from '../images/icon-millwall.svg';
+import { ReactComponent as IconNaijabet } from '../images/icon-naijabet.svg';
+import { ReactComponent as IconNairabet } from '../images/icon-nairabet.svg';
 import { ReactComponent as IconNewcastle } from '../images/icon-newcastle.svg';
 import { ReactComponent as IconNorwich } from '../images/icon-norwich.svg';
 import { ReactComponent as IconPremierLeague } from '../images/icon-premier-league.svg';
 import { ReactComponent as IconSerieA } from '../images/icon-serie-a.svg';
 import { ReactComponent as IconSheffieldUnited } from '../images/icon-sheffield-united.svg';
 import { ReactComponent as IconSouthampton } from '../images/icon-southampton.svg';
+import { ReactComponent as IconSportybet } from '../images/icon-sportybet.svg';
 import { ReactComponent as IconTottenham } from '../images/icon-tottenham.svg';
 import { ReactComponent as IconWatford } from '../images/icon-watford.svg';
 import { ReactComponent as IconWestBrom } from '../images/icon-west-brom.svg';
@@ -39,6 +46,9 @@ export default {
 "icon-arsenal": IconArsenal, 
 "icon-aston-villa": IconAstonVilla, 
 "icon-barnsley": IconBarnsley, 
+"icon-bet9ja": IconBetJa, 
+"icon-betking": IconBetking, 
+"icon-betnaija": IconBetnaija, 
 "icon-birmingham": IconBirmingham, 
 "icon-bournemouth": IconBournemouth, 
 "icon-brighton": IconBrighton, 
@@ -58,13 +68,17 @@ export default {
 "icon-liverpool": IconLiverpool, 
 "icon-manchester-city": IconManchesterCity, 
 "icon-manchester-united": IconManchesterUnited, 
+"icon-merrybet": IconMerrybet, 
 "icon-millwall": IconMillwall, 
+"icon-naijabet": IconNaijabet, 
+"icon-nairabet": IconNairabet, 
 "icon-newcastle": IconNewcastle, 
 "icon-norwich": IconNorwich, 
 "icon-premier-league": IconPremierLeague, 
 "icon-serie-a": IconSerieA, 
 "icon-sheffield-united": IconSheffieldUnited, 
 "icon-southampton": IconSouthampton, 
+"icon-sportybet": IconSportybet, 
 "icon-tottenham": IconTottenham, 
 "icon-watford": IconWatford, 
 "icon-west-brom": IconWestBrom, 

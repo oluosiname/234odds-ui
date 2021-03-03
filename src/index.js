@@ -5,20 +5,23 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home/Index";
+import Event from "./pages/Event/index";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route exact path="/">
+        <main className="bg-brand-primary-100 min-h-screen h-100">
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/events/:eventId">
+            <Event />
+          </Route>
+          {/* <Route exact path="/competitions/:competitionId/events">
           <Home />
-        </Route>
-        {/* <Route exact path="events/:eventId">
-          <Event />
         </Route> */}
-        {/* <Route exact path="/competitions/:competitionId/events">
-          <Home />
-        </Route> */}
+        </main>
       </Switch>
     </Router>
   </React.StrictMode>,

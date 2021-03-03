@@ -14,7 +14,7 @@ const HeaderLinks = () => {
   ];
 
   return (
-    <section className="flex space-x-4 text-white bg-brand-primary-100 text-xs px-3 py-3 pt-3.5 max-w-full overflow-x-scroll md:space-x-8">
+    <section className="flex space-x-4 text-white bg-brand-primary-100 text-xs px-3 py-3 pt-3.5 max-w-full overflow-x-scroll md:overflow-x-hidden md:space-x-8">
       {leagues.map((league) => {
         return (
           <div className="flex py-3 px-3 bg-gray-200 rounded-3xl uppercase text-xxs font-medium md:text-xs tracking-wide whitespace-nowrap items-center space-x-2">
