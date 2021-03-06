@@ -10,7 +10,9 @@ const Index = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get(`http://localhost:3001/v1/events/${eventId}`);
+      const res = await axios.get(
+        `${process.env.REACT_APP_API_URL}/events/${eventId}`
+      );
       setEvent(res.data.event);
     })();
 
