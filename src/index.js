@@ -19,9 +19,9 @@ ReactDOM.render(
             <Route exact path="/events/:eventId">
               <Event />
             </Route>
-            {/* <Route exact path="/competitions/:competitionId/events">
-          <Home />
-        </Route> */}
+            <Route exact path="/competitions/:competition">
+              <Home />
+            </Route>
           </main>
         </React.Fragment>
       </Switch>

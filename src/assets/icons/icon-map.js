@@ -33,6 +33,7 @@ import { ReactComponent as IconNairabet } from '../images/icon-nairabet.svg';
 import { ReactComponent as IconNewcastle } from '../images/icon-newcastle.svg';
 import { ReactComponent as IconNorwich } from '../images/icon-norwich.svg';
 import { ReactComponent as IconPremierLeague } from '../images/icon-premier-league.svg';
+import { ReactComponent as IconReset } from '../images/icon-reset.svg';
 import { ReactComponent as IconSerieA } from '../images/icon-serie-a.svg';
 import { ReactComponent as IconSheffieldUnited } from '../images/icon-sheffield-united.svg';
 import { ReactComponent as IconSouthampton } from '../images/icon-southampton.svg';
@@ -41,11 +42,13 @@ import { ReactComponent as IconToda } from '../images/icon-toda.svg';
 import { ReactComponent as IconToday } from '../images/icon-today.svg';
 import { ReactComponent as IconTodays } from '../images/icon-todays.svg';
 import { ReactComponent as IconTottenham } from '../images/icon-tottenham.svg';
+import { ReactComponent as IconUndo } from '../images/icon-undo.svg';
 import { ReactComponent as IconWatford } from '../images/icon-watford.svg';
 import { ReactComponent as IconWestBrom } from '../images/icon-west-brom.svg';
 import { ReactComponent as IconWestHam } from '../images/icon-west-ham.svg';
 import { ReactComponent as IconWigan } from '../images/icon-wigan.svg';
 import { ReactComponent as IconWolves } from '../images/icon-wolves.svg';
+import { ReactComponent as IconWorld } from '../images/icon-world.svg';
 import { ReactComponent as IconWycombe } from '../images/icon-wycombe.svg';
 import { ReactComponent as Merrybet } from '../images/merrybet.svg';
 
@@ -85,6 +88,7 @@ export default {
 "icon-newcastle": IconNewcastle, 
 "icon-norwich": IconNorwich, 
 "icon-premier-league": IconPremierLeague, 
+"icon-reset": IconReset, 
 "icon-serie-a": IconSerieA, 
 "icon-sheffield-united": IconSheffieldUnited, 
 "icon-southampton": IconSouthampton, 
@@ -93,11 +97,13 @@ export default {
 "icon-today": IconToday, 
 "icon-todays": IconTodays, 
 "icon-tottenham": IconTottenham, 
+"icon-undo": IconUndo, 
 "icon-watford": IconWatford, 
 "icon-west-brom": IconWestBrom, 
 "icon-west-ham": IconWestHam, 
 "icon-wigan": IconWigan, 
 "icon-wolves": IconWolves, 
+"icon-world": IconWorld, 
 "icon-wycombe": IconWycombe, 
 "merrybet": Merrybet, 
 };
