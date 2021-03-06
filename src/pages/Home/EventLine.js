@@ -6,7 +6,7 @@ import parameterize from "parameterize";
 
 const EventLine = ({ event }) => {
   return (
-    <Link to={`/events/${event.id}`}>
+    <Link to={`/events/${event.uid}`}>
       <div className="flex bg-brand-primary-100 p-4 px-5 border-b border-brand-primary-200 ">
         <div className="w-3/5 flex text-gray-100 text-xs">
           <div className="time w-1/4">{event.kickoff}</div>
@@ -33,13 +33,13 @@ const EventLine = ({ event }) => {
         </div>
         <div className="w-2/5 text-xs text-gray-100 space-x-2 flex text-white justify-end">
           <span className="bg-gray-300 flex rounded-md px-2 py-3">
-            {event.home_odds}
+            {event.top_odds.home}
           </span>
           <span className="bg-gray-300 flex rounded-md px-2 py-3">
-            {event.draw_odds}
+            {event.top_odds.draw}
           </span>
           <span className="bg-gray-300 flex rounded-md px-2 py-3">
-            {event.away_odds}
+            {event.top_odds.away}
           </span>
         </div>
       </div>

@@ -11,17 +11,19 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <main className="bg-black min-h-screen h-100 md:pt-12">
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/events/:eventId">
-            <Event />
-          </Route>
-          {/* <Route exact path="/competitions/:competitionId/events">
+        <React.Fragment>
+          <main className="bg-black min-h-screen h-100 md:pt-12">
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/events/:eventId">
+              <Event />
+            </Route>
+            {/* <Route exact path="/competitions/:competitionId/events">
           <Home />
         </Route> */}
-        </main>
+          </main>
+        </React.Fragment>
       </Switch>
     </Router>
   </React.StrictMode>,

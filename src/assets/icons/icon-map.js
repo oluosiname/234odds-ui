@@ -22,7 +22,7 @@ import { ReactComponent as IconFulham } from '../images/icon-fulham.svg';
 import { ReactComponent as IconLaLiga } from '../images/icon-la-liga.svg';
 import { ReactComponent as IconLeeds } from '../images/icon-leeds.svg';
 import { ReactComponent as IconLeicester } from '../images/icon-leicester.svg';
-import { ReactComponent as IconLigueOne } from '../images/icon-ligue-one.svg';
+import { ReactComponent as IconLigue } from '../images/icon-ligue-1.svg';
 import { ReactComponent as IconLiverpool } from '../images/icon-liverpool.svg';
 import { ReactComponent as IconManchesterCity } from '../images/icon-manchester-city.svg';
 import { ReactComponent as IconManchesterUnited } from '../images/icon-manchester-united.svg';
@@ -74,7 +74,7 @@ export default {
 "icon-la-liga": IconLaLiga, 
 "icon-leeds": IconLeeds, 
 "icon-leicester": IconLeicester, 
-"icon-ligue-one": IconLigueOne, 
+"icon-ligue-1": IconLigue, 
 "icon-liverpool": IconLiverpool, 
 "icon-manchester-city": IconManchesterCity, 
 "icon-manchester-united": IconManchesterUnited, 

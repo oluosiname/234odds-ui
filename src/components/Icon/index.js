@@ -25,7 +25,7 @@ export const IconFulham = props => <Icon {...props} name="icon-fulham" />;
 export const IconLaLiga = props => <Icon {...props} name="icon-la-liga" />;
 export const IconLeeds = props => <Icon {...props} name="icon-leeds" />;
 export const IconLeicester = props => <Icon {...props} name="icon-leicester" />;
-export const IconLigueOne = props => <Icon {...props} name="icon-ligue-one" />;
+export const IconLigue = props => <Icon {...props} name="icon-ligue-1" />;
 export const IconLiverpool = props => <Icon {...props} name="icon-liverpool" />;
 export const IconManchesterCity = props => <Icon {...props} name="icon-manchester-city" />;
 export const IconManchesterUnited = props => <Icon {...props} name="icon-manchester-united" />;

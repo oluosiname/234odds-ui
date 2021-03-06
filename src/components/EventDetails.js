@@ -50,7 +50,10 @@ const EventDetails = ({ event }) => {
           kind={"away"}
         />
       </div>
-      <div className="flex flex-col  p-2  space-y-4">
+
+      {/* home_form: ["W", "D", "L", "W", "D"],
+      away_form: ["W", "W", "L", "W", "W"], */}
+      {/* <div className="flex flex-col  p-2  space-y-4">
         <h6 className="text-xs text-center">FORM</h6>
         <div className="flex space-x-1.5 items-center justify-center">
           <span className="mr-4">
@@ -70,7 +73,7 @@ const EventDetails = ({ event }) => {
             return <FormOutcome outcome={o} />;
           })}
         </div>
-      </div>
+      </div> */}
       <div className="flex p-2 items-center">
         <span className="w-1/3 text-gray-100 uppercase text-xs space-x-4">
           Bookmakers
