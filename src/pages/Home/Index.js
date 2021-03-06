@@ -48,7 +48,10 @@ const Index = () => {
     }
     (async () => {
       const res = await axios.get(
-        `http://localhost:3001/v1/events?competition=${competition}`
+        `${process.env.REACT_APP_API_URL}/events?competition=${competition}`,
+        {
+          headers: { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}` },
+        }
       );
       setData(res.data);
     })();
