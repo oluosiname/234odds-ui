@@ -31,7 +31,9 @@ const Index = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get(`${process.env.REACT_APP_API_URL}/events`);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/events`, {
+        headers: { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}` },
+      });
       setData(res.data);
     })();
 
