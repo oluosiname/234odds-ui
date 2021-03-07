@@ -32,13 +32,13 @@ const EventLine = ({ event }) => {
           </div>
         </div>
         <div className="w-2/5 text-xs text-gray-100 space-x-2 flex text-white justify-end">
-          <span className="bg-gray-300 flex rounded-md px-2 py-2.5">
+          <span className="bg-gray-300 flex rounded-md w-full flex justify-center items-center h-10">
             {event.top_odds.home}
           </span>
-          <span className="bg-gray-300 flex rounded-md px-2 py-2.5">
+          <span className="bg-gray-300 flex rounded-md w-full flex justify-center items-center h-10">
             {event.top_odds.draw}
           </span>
-          <span className="bg-gray-300 flex rounded-md px-2 py-2.5">
+          <span className="bg-gray-300 flex rounded-md w-full flex justify-center items-center h-10">
             {event.top_odds.away}
           </span>
         </div>
