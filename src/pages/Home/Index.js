@@ -17,24 +17,7 @@ const Index = () => {
 
   let { competition } = useParams();
 
-  const [selectedEvent, setSelectedEvent] = useState({
-    uid: "3456UISS",
-    top_odds: {
-      home: 1.25,
-      draw: 3.05,
-      away: 2.33,
-    },
-    home_form: ["W", "D", "L", "W", "D"],
-    away_form: ["W", "W", "L", "W", "W"],
-    odds: [
-      { bookmaker: "nairabet", home: 1.35, away: 2.32, draw: 3.05 },
-      { bookmaker: "merrybet", home: 1.25, away: 2.33, draw: 3.28 },
-      { bookmaker: "naijabet", home: 1.25, away: 2.45, draw: 3.33 },
-      { bookmaker: "sportybet", home: 1.35, away: 2.32, draw: 3.21 },
-      { bookmaker: "bet9ja", home: 1.11, away: 2.33, draw: 3.98 },
-      { bookmaker: "betking", home: 1.25, away: 2.25, draw: 3.34 },
-    ],
-  });
+  const [selectedEvent, setSelectedEvent] = useState({});
 
   function stringifyDate(value) {
     return new Intl.DateTimeFormat("en-US").format(value);
