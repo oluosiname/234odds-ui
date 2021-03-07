@@ -62,7 +62,7 @@ const Index = () => {
             <div
               className={`cursor-pointer flex py-1.5 px-3 rounded-3xl text-xxs tracking-wide whitespace-nowrap items-center space-x-2 border  border-gray-100 ${
                 date && stringifyDate(date) === stringifyDate(new Date())
-                  ? "border  border-blue"
+                  ? "border  border-blue-100"
                   : ""
               }`}
               onClick={() => setDate(new Date())}
@@ -76,7 +76,7 @@ const Index = () => {
             <div
               className={`cursor-pointer flex py-1.5 px-3 rounded-3xl text-xxs tracking-wide whitespace-nowrap items-center space-x-2 border  border-gray-100 ${
                 date && stringifyDate(date) !== stringifyDate(new Date())
-                  ? "border  border-blue"
+                  ? "border  border-blue-100"
                   : ""
               }`}
               onClick={() => calendarEl.current.setOpen(true)}

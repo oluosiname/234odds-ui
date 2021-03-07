@@ -15,11 +15,15 @@ module.exports = {
           200: "#14161b",
         },
       },
-      blue: "#129AB7",
+      // blue: "#129AB7",
       white: "#ffffff",
       black: "#000000",
       green: "#2bd299",
       red: "#f33d59",
+      blue: {
+        100: "#129AB7",
+        200: "#6f8caa",
+      },
     },
 
     fontFamily: {
@@ -28,6 +32,10 @@ module.exports = {
     extend: {
       fontSize: {
         xxs: "0.625rem",
+      },
+      backgroundImage: {
+        stadium:
+          "linear-gradient(0deg, rgba(16, 39, 70, 0.7), rgba(16, 39, 70, 0.9)), url(https://res.cloudinary.com/uniodds/image/upload/c_scale,q_auto,w_417/v1615151436/stadium-2.jpg)",
       },
     },
   },

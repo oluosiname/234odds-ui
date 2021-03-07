@@ -24,7 +24,7 @@ const HeaderLinks = ({ competition: selectedCompetition }) => {
       <Link to="/">
         <div
           className={`flex py-2 px-3 rounded-3xl uppercase text-xxs font-medium md:text-xs tracking-wide whitespace-nowrap items-center bg-gray-200 space-x-2 cursor-pointer  ${
-            selectedCompetition ? "" : "border  border-blue"
+            selectedCompetition ? "" : "border  border-blue-100"
           }`}
         >
           <Icon name={`icon-world`} className="w-4" color="#ffffff" />
@@ -36,7 +36,7 @@ const HeaderLinks = ({ competition: selectedCompetition }) => {
           <Link to={`/competitions/${competition}`} key={competition}>
             <div
               className={`flex py-2 px-3 rounded-3xl uppercase text-xxs font-medium md:text-xs tracking-wide whitespace-nowrap items-center bg-gray-200 space-x-2 cursor-pointer  ${
-                isSelected(competition) ? "border  border-blue" : ""
+                isSelected(competition) ? "border  border-blue-100" : ""
               }`}
             >
               <CloudImage

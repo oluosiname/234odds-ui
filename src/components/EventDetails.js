@@ -1,11 +1,12 @@
 import React from "react";
+import parameterize from "parameterize";
+import CloudImage from "./CloudImage";
 import sportybet from "../assets/images/sportybet.png";
 import nairabet from "../assets/images/nairabet.png";
 import bet9ja from "../assets/images/bet9ja.png";
 import naijabet from "../assets/images/naijabet.png";
 import merrybet from "../assets/images/merrybet.svg";
 import betking from "../assets/images/betking.svg";
-import Icon from "./Icon/Icon";
 
 const EventDetails = ({ event }) => {
   const bookmakers = {
@@ -31,8 +32,38 @@ const EventDetails = ({ event }) => {
   if (!event.uid) {
     return <div></div>;
   }
+
   return (
     <div className="md:sticky md:top-0  bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 h-screen">
+      <section className="px-5 bg-stadium">
+        <div className="text-center py-3 text-xs">
+          {" "}
+          <span className="capitalize mr-2">{event.country}</span>/
+          <span className="ml-2 capitalize">{event.competition}</span>{" "}
+        </div>
+        <section className="flex text-xs justify-between items-center py-3 ">
+          <div className=" flex justify-between items-center flex-col space-y-2">
+            <CloudImage
+              name={parameterize(event.home_team)}
+              className="h-14 w-14"
+              width={"72"}
+            />
+            <span className="text-white">{event.home_team}</span>
+          </div>
+
+          <div className="flex justify-between items-center text-white">
+            {`${event.date}, ${event.kickoff}`}
+          </div>
+          <div className="flex flex-col justify-between items-center space-y-2">
+            <CloudImage
+              name={parameterize(event.away_team)}
+              className="h-14 w-14"
+              width={"72"}
+            />
+            <span className="text-white">{event.away_team}</span>
+          </div>
+        </section>
+      </section>
       <div className="bg-gray-300 py-3 px-5 uppercase text-gray-100 flex justify-between  space-x-2">
         <TopOdds
           odds={event.top_odds.home}
@@ -75,10 +106,8 @@ const EventDetails = ({ event }) => {
         </div>
       </div> */}
       <div className="flex p-2 items-center">
-        <span className="w-1/3 text-gray-100 uppercase text-xs space-x-4">
-          Bookmakers
-        </span>
-        <div className="w-2/3 flex space-x-8 justify-end">
+        <span className="w-1/3 text-gray-100 uppercase text-xs space-x-4"></span>
+        <div className="w-2/3 flex space-x-8 justify-end font-medium">
           <span className="px-3 py-3">1</span>
           <span className="px-3 py-3">X</span>
           <span className="px-3 py-3">2</span>
@@ -98,7 +127,7 @@ const EventDetails = ({ event }) => {
               <span
                 className={`${
                   event.top_odds.home === bookmaker_odds.home
-                    ? "bg-blue"
+                    ? "bg-blue-100"
                     : "bg-gray-300"
                 } flex rounded-md p-3`}
               >
@@ -107,7 +136,7 @@ const EventDetails = ({ event }) => {
               <span
                 className={`${
                   event.top_odds.draw === bookmaker_odds.draw
-                    ? "bg-blue"
+                    ? "bg-blue-100"
                     : "bg-gray-300"
                 } flex rounded-md p-3`}
               >
@@ -116,7 +145,7 @@ const EventDetails = ({ event }) => {
               <span
                 className={`${
                   event.top_odds.away === bookmaker_odds.away
-                    ? "bg-blue"
+                    ? "bg-blue-100"
                     : "bg-gray-300"
                 } flex rounded-md p-3`}
               >

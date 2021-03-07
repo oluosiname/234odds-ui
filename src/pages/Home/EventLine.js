@@ -1,5 +1,4 @@
 import React from "react";
-import Icon from "../../components/Icon/Icon";
 import { Link } from "react-router-dom";
 
 import parameterize from "parameterize";
