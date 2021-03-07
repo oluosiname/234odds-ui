@@ -13,12 +13,11 @@ const EventLine = ({ event }) => {
           <div className="time w-1/4">{event.kickoff}</div>
           <div className="teams flex flex-col  w-3/4 justify-between">
             <div className="flex space-x-2">
-              <span>
-                <CloudImage
-                  name={parameterize(event.home_team)}
-                  className="h-4 w-4"
-                />
-              </span>
+              <CloudImage
+                name={parameterize(event.home_team)}
+                className="h-4 w-4"
+              />
+
               <span>{event.home_team}</span>
             </div>
             <div className="flex space-x-2">

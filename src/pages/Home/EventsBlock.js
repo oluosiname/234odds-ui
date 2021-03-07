@@ -13,7 +13,7 @@ const EventsBlock = ({ data }) => {
             <div className=" bg-gray-200 text-gray-100 uppercase text-xs align-middle p-2 px-5 flex items-center space-x-4">
               <CloudImage
                 name={parameterize(competition)}
-                className="h-4 w-4 object-contain"
+                className="w-4 h-5 max-w-none object-contain"
               />
               <span className="uppercase">{competition}</span>
             </div>

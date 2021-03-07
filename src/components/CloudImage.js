@@ -1,14 +1,16 @@
 import React from "react";
-import { Image, Transformation, CloudinaryContext } from "cloudinary-react";
+import { Image } from "cloudinary-react";
 
 const CloudImage = ({ name, className }) => {
   return (
     <Image
       cloudName="uniodds"
-      publicId={`icon-${name}.webp`}
+      publicId={`icon-${name}.png`}
       className={className}
-      quality="10"
-      width="50"
+      quality="auto"
+      width="32"
+      height="36"
+      crop="scale"
     />
   );
 };

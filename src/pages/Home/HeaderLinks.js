@@ -41,7 +41,7 @@ const HeaderLinks = ({ competition: selectedCompetition }) => {
             >
               <CloudImage
                 name={parameterize(competition)}
-                className="w-4 h-4 max-w-none object-contain"
+                className="w-4 h-5 max-w-none object-contain"
               />
 
               <span>{competition}</span>
