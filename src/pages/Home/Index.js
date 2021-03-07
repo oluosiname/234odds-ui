@@ -40,16 +40,6 @@ const Index = () => {
     return new Intl.DateTimeFormat("en-US").format(value);
   }
 
-  const handleDateReset = async () => {
-    setDate(null);
-
-    const res = await axios.get(`${process.env.REACT_APP_API_URL}/events`, {
-      params: { competition },
-      headers: { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}` },
-    });
-    setData(res.data);
-  };
-
   useEffect(() => {
     (async () => {
       const res = await axios.get(`${process.env.REACT_APP_API_URL}/events`, {

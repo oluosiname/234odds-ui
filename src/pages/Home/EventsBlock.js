@@ -1,8 +1,8 @@
 import React from "react";
 import parameterize from "parameterize";
 
-import Icon from "../../components/Icon/Icon";
 import EventLine from "./EventLine";
+import CloudImage from "../../components/CloudImage";
 
 const EventsBlock = ({ data }) => {
   return (
@@ -11,10 +11,9 @@ const EventsBlock = ({ data }) => {
         return (
           <div key={competition}>
             <div className=" bg-gray-200 text-gray-100 uppercase text-xs align-middle p-2 px-5 flex items-center space-x-4">
-              <Icon
-                name={`icon-${parameterize(competition)}`}
-                className="w-4"
-                color="#ffffff"
+              <CloudImage
+                name={parameterize(competition)}
+                className="h-4 w-4 object-contain"
               />
               <span className="uppercase">{competition}</span>
             </div>

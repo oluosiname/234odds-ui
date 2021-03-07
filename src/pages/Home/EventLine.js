@@ -3,6 +3,7 @@ import Icon from "../../components/Icon/Icon";
 import { Link } from "react-router-dom";
 
 import parameterize from "parameterize";
+import CloudImage from "../../components/CloudImage";
 
 const EventLine = ({ event }) => {
   return (
@@ -13,18 +14,18 @@ const EventLine = ({ event }) => {
           <div className="teams flex flex-col  w-3/4 justify-between">
             <div className="flex space-x-2">
               <span>
-                <Icon
-                  name={`icon-${parameterize(event.home_team)}`}
-                  className="w-4"
+                <CloudImage
+                  name={parameterize(event.home_team)}
+                  className="h-4 w-4"
                 />
               </span>
               <span>{event.home_team}</span>
             </div>
             <div className="flex space-x-2">
               <span>
-                <Icon
-                  name={`icon-${parameterize(event.away_team)}`}
-                  className="w-4"
+                <CloudImage
+                  name={parameterize(event.away_team)}
+                  className="h-4 w-4"
                 />
               </span>
               <span>{event.away_team}</span>
