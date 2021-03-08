@@ -18,6 +18,7 @@ const Index = () => {
   let { competition } = useParams();
 
   const [selectedEvent, setSelectedEvent] = useState({});
+  const [selectedEventId, setSelectedEventId] = useState();
 
   function stringifyDate(value) {
     return new Intl.DateTimeFormat("en-US").format(value);
@@ -32,6 +33,21 @@ const Index = () => {
       setData(res.data);
     })();
   }, [competition, date]);
+
+  useEffect(() => {
+    if (!selectedEventId) {
+      return;
+    }
+    (async () => {
+      const res = await axios.get(
+        `${process.env.REACT_APP_API_URL}/events/${selectedEventId}`,
+        {
+          headers: { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}` },
+        }
+      );
+      setSelectedEvent(res.data.event);
+    })();
+  }, [selectedEventId]);
 
   return (
     <div className="font-roboto  md:w-9/12 md:m-auto bg-brand-primary-100 shadow-2xl rounded border border-gray-300">
@@ -84,7 +100,7 @@ const Index = () => {
               <Icon name="icon-undo" />
             </span>
           </div>
-          <EventsBlock data={data} />
+          <EventsBlock data={data} setSelectedEventId={setSelectedEventId} />
         </section>
 
         <section id="event-details" className="w-full md:w-1/3 hidden md:block">

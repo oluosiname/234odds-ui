@@ -4,7 +4,7 @@ import parameterize from "parameterize";
 import EventLine from "./EventLine";
 import CloudImage from "../../components/CloudImage";
 
-const EventsBlock = ({ data }) => {
+const EventsBlock = ({ data, setSelectedEventId }) => {
   return (
     <div className="events-block">
       {data.map(({ competition, events }) => {
@@ -30,7 +30,11 @@ const EventsBlock = ({ data }) => {
                   </div>
                   {day_events.map((event) => {
                     return (
-                      <EventLine event={event} key={event.uid.toString()} />
+                      <EventLine
+                        event={event}
+                        key={event.uid.toString()}
+                        setSelectedEventId={setSelectedEventId}
+                      />
                     );
                   })}
                 </div>
