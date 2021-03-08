@@ -20,12 +20,11 @@ const EventLine = ({ event }) => {
               <span>{event.home_team}</span>
             </div>
             <div className="flex space-x-2">
-              <span>
-                <CloudImage
-                  name={parameterize(event.away_team)}
-                  className="h-4 w-4"
-                />
-              </span>
+              <CloudImage
+                name={parameterize(event.away_team)}
+                className="h-4 w-4"
+              />
+
               <span>{event.away_team}</span>
             </div>
           </div>
