@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import axios from "axios";
 import DatePicker from "react-datepicker";
+import { nextDates, stringifyDate } from "../../helpers/dates";
 import "react-datepicker/dist/react-datepicker.css";
 
 import HeaderLinks from "./HeaderLinks";
@@ -19,10 +20,6 @@ const Index = () => {
 
   const [selectedEvent, setSelectedEvent] = useState({});
   const [selectedEventId, setSelectedEventId] = useState();
-
-  function stringifyDate(value) {
-    return new Intl.DateTimeFormat("en-US").format(value);
-  }
 
   useEffect(() => {
     (async () => {
@@ -57,49 +54,7 @@ const Index = () => {
           id="event-list"
           className="w-full md:w-2/3  border-r border-gray-300"
         >
-          <div className="bg-gray-300 py-2 px-5 uppercase text-gray-100 flex space-x-3 items-center">
-            <div
-              className={`cursor-pointer flex py-1.5 px-3 rounded-3xl text-xxs tracking-wide whitespace-nowrap items-center space-x-2 border  border-gray-100 ${
-                date && stringifyDate(date) === stringifyDate(new Date())
-                  ? "border  border-blue-100"
-                  : ""
-              }`}
-              onClick={() => setDate(new Date())}
-            >
-              <span>
-                <Icon name="icon-today" />
-              </span>
-              <span>Today</span>
-            </div>
-
-            <div
-              className={`cursor-pointer flex py-1.5 px-3 rounded-3xl text-xxs tracking-wide whitespace-nowrap items-center space-x-2 border  border-gray-100 ${
-                date && stringifyDate(date) !== stringifyDate(new Date())
-                  ? "border  border-blue-100"
-                  : ""
-              }`}
-              onClick={() => calendarEl.current.setOpen(true)}
-            >
-              <span>
-                <Icon name="icon-calendar" />
-              </span>
-              <span>
-                {date && date !== stringifyDate(new Date())
-                  ? stringifyDate(date)
-                  : "Select"}
-              </span>
-            </div>
-            <DatePicker
-              selected={date ? new Date(date) : new Date()}
-              onChange={(date) => setDate(date)}
-              ref={calendarEl}
-              className="hidden"
-            />
-
-            <span className="cursor-pointer" onClick={() => setDate(null)}>
-              <Icon name="icon-undo" />
-            </span>
-          </div>
+          <DateSelector date={date} setDate={setDate} />
           <EventsBlock data={data} setSelectedEventId={setSelectedEventId} />
         </section>
 
@@ -107,6 +62,44 @@ const Index = () => {
           <EventDetails event={selectedEvent} />
         </section>
       </section>
+    </div>
+  );
+};
+
+const DateSelector = ({ setDate, date }) => {
+  return (
+    <div className="bg-gray-300 py-1 px-5 uppercase text-gray-100 flex space-x-3 items-center justify-between md:justify-start  md:space-x-5 overflow-hidden">
+      <span
+        className={`cursor-pointer text-xxs tracking-wide whitespace-nowrap  ${
+          date && stringifyDate(date) === stringifyDate(new Date())
+            ? "text-blue-100 font-bold"
+            : ""
+        }`}
+        onClick={() => setDate(new Date())}
+      >
+        Today
+      </span>
+      {nextDates().map((d) => {
+        return (
+          <span
+            className={`cursor-pointer text-xxs tracking-wide whitespace-nowrap  ${
+              date && stringifyDate(date) === stringifyDate(d)
+                ? "text-blue-100 font-bold"
+                : ""
+            }`}
+            onClick={() => setDate(new Date(d))}
+          >
+            {stringifyDate(d, {
+              month: "short",
+              day: "numeric",
+            })}
+          </span>
+        );
+      })}
+
+      <span className="cursor-pointer" onClick={() => setDate(null)}>
+        <Icon name="icon-undo" size="0.75rem" />
+      </span>
     </div>
   );
 };

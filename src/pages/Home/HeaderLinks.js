@@ -23,7 +23,7 @@ const HeaderLinks = ({ competition: selectedCompetition }) => {
     <section className="flex space-x-2  text-xs px-3 py-3 pt-3.5 max-w-full overflow-x-scroll md:overflow-x-hidden md:space-x-3 text-white bg-brand-primary-100 ">
       <Link to="/">
         <div
-          className={`flex py-2 px-3 rounded-3xl uppercase text-xxs font-medium md:text-xs tracking-wide whitespace-nowrap items-center bg-gray-200 space-x-2 cursor-pointer  ${
+          className={`flex py-1.5 px-3 rounded-3xl uppercase text-xxs font-medium tracking-wide whitespace-nowrap items-center bg-gray-200 space-x-2 cursor-pointer  ${
             selectedCompetition ? "" : "border  border-blue-100"
           }`}
         >
@@ -35,7 +35,7 @@ const HeaderLinks = ({ competition: selectedCompetition }) => {
         return (
           <Link to={`/competitions/${competition}`} key={competition}>
             <div
-              className={`flex py-2 px-3 rounded-3xl uppercase text-xxs font-medium md:text-xs tracking-wide whitespace-nowrap items-center bg-gray-200 space-x-2 cursor-pointer  ${
+              className={`flex py-1.5 px-3 rounded-3xl uppercase text-xxs font-medium tracking-wide whitespace-nowrap items-center bg-gray-200 space-x-2 cursor-pointer  ${
                 isSelected(competition) ? "border  border-blue-100" : ""
               }`}
             >
