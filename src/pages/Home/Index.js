@@ -68,7 +68,7 @@ const Index = () => {
 
 const DateSelector = ({ setDate, date }) => {
   return (
-    <div className="bg-gray-300 py-1 px-5 uppercase text-gray-100 flex space-x-3 items-center justify-between md:justify-start  md:space-x-5 overflow-hidden">
+    <div className="bg-gray-300 py-2 px-5 uppercase text-gray-100 flex space-x-3 items-center justify-between md:justify-start  md:space-x-5 overflow-hidden">
       <span
         className={`cursor-pointer text-xxs tracking-wide whitespace-nowrap  ${
           date && stringifyDate(date) === stringifyDate(new Date())
