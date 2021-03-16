@@ -42,25 +42,29 @@ const EventDetails = ({ event }) => {
           <span className="ml-2 capitalize">{event.competition}</span>{" "}
         </div>
         <section className="flex text-xs justify-between items-center py-3 ">
-          <div className=" flex justify-between items-center flex-col space-y-2">
+          <div className=" flex justify-between items-center flex-col space-y-2 w-1/3">
             <CloudImage
               name={parameterize(event.home_team)}
               className="h-14 w-14"
               width={"72"}
             />
-            <span className="text-white">{event.home_team}</span>
+            <span className="text-white text-center whitespace-nowrap">
+              {event.home_team}
+            </span>
           </div>
 
-          <div className="flex justify-between items-center text-white">
+          <div className="text-center text-white w-1/3">
             {`${event.date}, ${event.kickoff}`}
           </div>
-          <div className="flex flex-col justify-between items-center space-y-2">
+          <div className="flex flex-col justify-between items-center space-y-2 w-1/3">
             <CloudImage
               name={parameterize(event.away_team)}
               className="h-14 w-14"
               width={"72"}
             />
-            <span className="text-white">{event.away_team}</span>
+            <span className="text-white text-center whitespace-nowrap">
+              {event.away_team}
+            </span>
           </div>
         </section>
       </section>
