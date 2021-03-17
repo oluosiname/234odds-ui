@@ -195,7 +195,7 @@ const TopOdds = ({ odds, bookmaker, kind }) => {
           {odds}
         </span>
         <span className="h-8 px-2 flex  items-center bg-brand-primary-100  rounded-r-md ">
-          <img src={nairabet} />
+          <img src={nairabet} alt="bookmaker" />
         </span>
       </div>
     </div>
