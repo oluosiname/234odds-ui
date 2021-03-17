@@ -49,6 +49,10 @@ const Index = () => {
     if (value && value.length > 2) {
       setSearch(value);
     }
+
+    if (value.length === 0) {
+      setSearch(null);
+    }
   };
 
   return (
@@ -59,7 +63,12 @@ const Index = () => {
           id="event-list"
           className="w-full md:w-2/3  border-r border-gray-300"
         >
-          <Filters date={date} setDate={setDate} handleChange={handleChange} />
+          <Filters
+            date={date}
+            setDate={setDate}
+            handleChange={handleChange}
+            search={search}
+          />
           <EventsBlock data={data} setSelectedEventId={setSelectedEventId} />
         </section>
 
