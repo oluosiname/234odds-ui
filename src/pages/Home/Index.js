@@ -7,6 +7,7 @@ import HeaderLinks from "./HeaderLinks";
 import EventsBlock from "./EventsBlock";
 import EventDetails from "../../components/EventDetails";
 import Filters from "../../components/filters";
+import { stringifyDate } from "../../helpers/dates";
 
 const Index = () => {
   const [data, setData] = useState([]);
@@ -20,7 +21,7 @@ const Index = () => {
   useEffect(() => {
     (async () => {
       const res = await axios.get(`${process.env.REACT_APP_API_URL}/events`, {
-        params: { competition, date },
+        params: { competition, date: stringifyDate(date) },
         headers: { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}` },
       });
       setData(res.data);

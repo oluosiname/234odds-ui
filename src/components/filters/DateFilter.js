@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import DatePicker from "react-datepicker";
 import Icon from "../../components/Icon/Icon";
-import { nextDates, stringifyDate } from "../../helpers/dates";
+import { stringifyDate } from "../../helpers/dates";
 import "react-datepicker/dist/react-datepicker.css";
 import "./datepicker.css";
 const DateFilter = ({ date, setDate }) => {
@@ -20,8 +20,6 @@ const DateFilter = ({ date, setDate }) => {
     setDate(value);
     setIsSelectingDate(false);
   };
-
-  // console.log(calendarEl.current, calendarEl.current.state.open);
 
   return (
     <>

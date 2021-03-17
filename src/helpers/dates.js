@@ -6,5 +6,8 @@ export const nextDates = () => {
 };
 
 export const stringifyDate = (value, options = {}) => {
+  if (!value) {
+    return;
+  }
   return new Intl.DateTimeFormat("en-US", options).format(value);
 };
