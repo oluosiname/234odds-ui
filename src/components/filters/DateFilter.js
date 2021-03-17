@@ -9,7 +9,7 @@ const DateFilter = ({ date, setDate }) => {
   const calendarEl = useRef();
 
   return (
-    <div className="flex w-100 md:w-3/5 justify-between md:justify-start space-x-3 md:space-x-5">
+    <>
       <span
         className={`cursor-pointer text-xxs tracking-wide whitespace-nowrap  ${
           date && stringifyDate(date) === stringifyDate(new Date())
@@ -23,6 +23,7 @@ const DateFilter = ({ date, setDate }) => {
       {nextDates().map((d) => {
         return (
           <span
+            key={d}
             className={`cursor-pointer text-xxs tracking-wide whitespace-nowrap  ${
               date && stringifyDate(date) === stringifyDate(d)
                 ? "text-blue-100 font-bold"
@@ -37,11 +38,13 @@ const DateFilter = ({ date, setDate }) => {
           </span>
         );
       })}
+      <h1>{stringifyDate(date)}</h1>
 
       <span className="cursor-pointer" onClick={() => setDate(null)}>
         <Icon name="icon-undo" size="0.75rem" />
       </span>
-    </div>
+      <DatePicker onChange={setDate} value={date} />
+    </>
   );
 };
 

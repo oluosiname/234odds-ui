@@ -38,6 +38,9 @@ module.exports = {
         stadium:
           "linear-gradient(0deg, rgb(12 12 12 / 70%), rgb(0 0 0 / 90%)), url(https://res.cloudinary.com/uniodds/image/upload/c_scale,q_auto,w_417/v1615151436/stadium-2.jpg)",
       },
+      inset: {
+        icon: "90%",
+      },
     },
   },
   variants: {

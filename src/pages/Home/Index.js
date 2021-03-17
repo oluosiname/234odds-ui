@@ -43,7 +43,7 @@ const Index = () => {
   }, [selectedEventId]);
 
   const handleChange = (value) => {
-    alert(value);
+    console.log(value);
   };
 
   return (

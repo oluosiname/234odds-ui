@@ -1,6 +1,6 @@
 export const nextDates = () => {
   const dt = new Date();
-  return [1, 2, 3, 4, 5].map((i) => {
+  return [1, 2].map((i) => {
     return new Date().setDate(dt.getDate() + i);
   });
 };
