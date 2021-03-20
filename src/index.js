@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -11,19 +13,21 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <React.Fragment>
-          <main className="bg-black min-h-screen h-100 md:pt-12">
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/events/:eventId">
-              <Event />
-            </Route>
-            <Route exact path="/competitions/:competition">
-              <Home />
-            </Route>
-          </main>
-        </React.Fragment>
+        <Provider store={store}>
+          <React.Fragment>
+            <main className="bg-black min-h-screen h-100 md:pt-12">
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/events/:eventId">
+                <Event />
+              </Route>
+              <Route exact path="/competitions/:competition">
+                <Home />
+              </Route>
+            </main>
+          </React.Fragment>
+        </Provider>
       </Switch>
     </Router>
   </React.StrictMode>,
