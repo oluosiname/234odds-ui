@@ -1,4 +1,4 @@
-import { FETCH_NEWS } from "../action-types";
+import { FETCH_NEWS } from "./action-types";
 
 const newsReducer = (state = { news: [1, 2, 3] }, action) => {
   switch (action.type) {

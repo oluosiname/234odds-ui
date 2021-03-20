@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import axios from "axios";
 
@@ -10,6 +11,8 @@ import Filters from "../../components/filters";
 import { stringifyDate } from "../../helpers/dates";
 
 const Index = () => {
+  const dispatch = useDispatch(); //this hook gives us dispatch method
+
   const [data, setData] = useState([]);
   const [date, setDate] = useState();
 
@@ -19,6 +22,17 @@ const Index = () => {
 
   const [selectedEvent, setSelectedEvent] = useState({});
   const [selectedEventId, setSelectedEventId] = useState();
+
+  const getNews = () => {
+    return (dispatch, _getState) => {
+      axios.get("https://jsonplaceholder.typicode.com/todos/1").then((res) =>
+        dispatch({
+          type: "FETCH_DATA",
+          data: res.data,
+        })
+      );
+    };
+  };
 
   useEffect(() => {
     (async () => {
