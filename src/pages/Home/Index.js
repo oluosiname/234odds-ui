@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import { getNews } from "../../redux/news/news-reducer";
 
 import axios from "axios";
 
@@ -9,10 +11,9 @@ import EventsBlock from "./EventsBlock";
 import EventDetails from "../../components/EventDetails";
 import Filters from "../../components/filters";
 import { stringifyDate } from "../../helpers/dates";
+import NewsItem from "../../components/NewsItem";
 
 const Index = () => {
-  const dispatch = useDispatch(); //this hook gives us dispatch method
-
   const [data, setData] = useState([]);
   const [date, setDate] = useState();
 
@@ -23,16 +24,8 @@ const Index = () => {
   const [selectedEvent, setSelectedEvent] = useState({});
   const [selectedEventId, setSelectedEventId] = useState();
 
-  const getNews = () => {
-    return (dispatch, _getState) => {
-      axios.get("https://jsonplaceholder.typicode.com/todos/1").then((res) =>
-        dispatch({
-          type: "FETCH_DATA",
-          data: res.data,
-        })
-      );
-    };
-  };
+  const dispatch = useDispatch(); //this hook gives us dispatch method
+  const { news } = useSelector(({ newsReducer }) => newsReducer);
 
   useEffect(() => {
     (async () => {
@@ -58,6 +51,10 @@ const Index = () => {
       setSelectedEvent(res.data.event);
     })();
   }, [selectedEventId]);
+
+  useEffect(() => {
+    dispatch(getNews());
+  }, [dispatch]);
 
   const handleChange = (value) => {
     if (value && value.length > 2) {
@@ -87,6 +84,7 @@ const Index = () => {
         </section>
 
         <section id="event-details" className="w-full md:w-1/3 hidden md:block">
+          <NewsItem article={news[0]} />
           <EventDetails event={selectedEvent} />
         </section>
       </section>

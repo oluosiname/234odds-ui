@@ -11,7 +11,6 @@ const DateFilter = ({ date, setDate }) => {
   const [isSelectingDate, setIsSelectingDate] = useState(false);
 
   const toggleCalendar = () => {
-    console.log(calendarEl.current, calendarEl.current.state.open);
     calendarEl.current.setOpen(!isSelectingDate);
     setIsSelectingDate((prev) => !prev);
   };
@@ -29,7 +28,7 @@ const DateFilter = ({ date, setDate }) => {
             name="icon-calendars"
             onClick={toggleCalendar}
             stroke={`${!!date ? "#129AB7" : "#c5c5c5"}`}
-            stroke-width="15"
+            strokeWidth="15"
             fill={`${!!date ? "#129AB7" : "#c5c5c5"}`}
           />
           <DatePicker
