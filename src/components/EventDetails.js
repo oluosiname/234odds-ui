@@ -34,7 +34,7 @@ const EventDetails = ({ event }) => {
   }
 
   return (
-    <div className="md:sticky md:top-0  bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 h-screen">
+    <div className="bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8">
       <section className="px-5 bg-stadium">
         <div className="text-center py-3 text-xs">
           {" "}

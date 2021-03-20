@@ -84,8 +84,16 @@ const Index = () => {
         </section>
 
         <section id="event-details" className="w-full md:w-1/3 hidden md:block">
-          <NewsItem article={news[0]} />
           <EventDetails event={selectedEvent} />
+          <ul className="bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 h-screen">
+            {news.map((article) => {
+              return (
+                <li key={article.headline} className="my-8">
+                  <NewsItem article={article} />
+                </li>
+              );
+            })}
+          </ul>
         </section>
       </section>
     </div>

@@ -13,32 +13,7 @@ export const getNews = () => {
   };
 };
 
-const initialState = [
-  {
-    images: [
-      {
-        name: "Southampton thrashes Bournemouth to reach FA Cup semis",
-        width: 576,
-        alt: "",
-        caption:
-          "Nathan Redmond shines as Southampton advances to the FA Cup semifinals after a 3-0 win against Bournemouth.",
-        url:
-          "https://a.espncdn.com/media/motion/ESPNi/2021/0320/int_210320_Southampton_thrashes_Bournemouth_to_reach_FA_Cup__semis/int_210320_Southampton_thrashes_Bournemouth_to_reach_FA_Cup__semis.jpg",
-        height: 324,
-      },
-    ],
-    description:
-      "Nathan Redmond shines as Southampton advances to the FA Cup semifinals after a 3-0 win against Bournemouth.",
-    links: {
-      web: {
-        href: "http://www.espn.com/soccer/english-fa-cup/40/video/4341740",
-        short: {},
-      },
-    },
-    headline: "Southampton thrashes Bournemouth to reach FA Cup semis",
-  },
-];
-const newsReducer = (state = { news: initialState }, action) => {
+const newsReducer = (state = { news: [] }, action) => {
   switch (action.type) {
     case FETCH_NEWS:
       return { ...state, news: action.payload };
