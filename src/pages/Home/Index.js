@@ -66,13 +66,25 @@ const Index = () => {
     }
   };
 
+  const countries = ["england", "germany", "europe", "international", "africa"];
+
   return (
-    <div className="font-roboto  md:w-9/12 md:m-auto bg-brand-primary-100 shadow-2xl rounded border border-gray-300">
+    <div className="font-roboto  ipad:w-full lg:w-9/12 md:m-auto bg-brand-primary-100 shadow-2xl rounded border border-gray-300">
       <HeaderLinks competition={competition} />
       <section className="events flex flex-wrap justify-between shadow-2xl">
         <section
           id="event-list"
-          className="w-full md:w-2/3  border-r border-gray-300"
+          className="w-full md:w-1/6  border-r border-gray-300"
+        >
+          <ul>
+            {countries.map((country) => {
+              return <li key={country}>{country}</li>;
+            })}
+          </ul>
+        </section>
+        <section
+          id="event-list"
+          className="w-full md:w-3/6  border-r border-gray-300"
         >
           <Filters
             date={date}
@@ -83,12 +95,12 @@ const Index = () => {
           <EventsBlock data={data} setSelectedEventId={setSelectedEventId} />
         </section>
 
-        <section id="event-details" className="w-full md:w-1/3 hidden md:block">
+        <section id="event-details" className="w-full md:w-2/6 hidden md:block">
           <EventDetails event={selectedEvent} />
           <ul className="bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 h-screen">
             {news.map((article) => {
               return (
-                <li key={article.headline} className="my-8">
+                <li key={article.headline} className="mb-8">
                   <NewsItem article={article} />
                 </li>
               );

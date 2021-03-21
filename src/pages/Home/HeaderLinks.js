@@ -16,7 +16,7 @@ const HeaderLinks = ({ competition: selectedCompetition }) => {
   ];
 
   return (
-    <section className=" md:flex hidden text-xs px-3 py-3 pt-3.5 max-w-full overflow-x-scroll potrait:overflow-x-scroll  md:overflow-x-hidden text-white bg-brand-primary-100 justify-between ">
+    <section className=" md:flex hidden text-xs px-3 py-3 pt-3.5 max-w-full overflow-x-scroll portrait:overflow-x-scroll ipad:overflow-x-scroll lg:overflow-x-hidden text-white bg-brand-primary-100 justify-between md:space-x-2">
       <Link to="/">
         <HeaderPill
           competition={"All"}

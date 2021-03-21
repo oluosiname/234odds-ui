@@ -53,6 +53,18 @@ module.exports = {
 
       screens: {
         portrait: { raw: "(orientation: portrait)" },
+        ipad: {
+          raw:
+            "(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2)",
+        },
+        "ipad-portrait": {
+          raw:
+            "(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)",
+        },
+        "ipad-landscape": {
+          raw:
+            "(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)",
+        },
         // => @media (orientation: portrait) { ... }
       },
     },

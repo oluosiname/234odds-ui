@@ -15,7 +15,7 @@ ReactDOM.render(
       <Switch>
         <Provider store={store}>
           <React.Fragment>
-            <main className="bg-black min-h-screen h-100 md:pt-12">
+            <main className="bg-black min-h-screen h-100 md:pt-12 ">
               <Route exact path="/">
                 <Home />
               </Route>
