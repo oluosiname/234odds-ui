@@ -43,7 +43,7 @@ const HeaderPill = ({ competition, selectedCompetition, icon = null }) => {
     if (competition === "All" && !selectedCompetition) {
       return true;
     }
-    return selectedCompetition === competition;
+    return selectedCompetition?.toLowerCase() === competition?.toLowerCase();
   }
 
   return (

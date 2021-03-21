@@ -21,6 +21,7 @@ const Index = () => {
   const [search, setSearch] = useState();
 
   let { competition } = useParams();
+  let { country } = useParams();
 
   const [selectedEvent, setSelectedEvent] = useState({});
   const [selectedEventId, setSelectedEventId] = useState();
@@ -31,12 +32,12 @@ const Index = () => {
   useEffect(() => {
     (async () => {
       const res = await axios.get(`${process.env.REACT_APP_API_URL}/events`, {
-        params: { competition, search, date: stringifyDate(date) },
+        params: { competition, search, country, date: stringifyDate(date) },
         headers: { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}` },
       });
       setData(res.data);
     })();
-  }, [competition, date, search]);
+  }, [competition, date, search, country]);
 
   useEffect(() => {
     if (!selectedEventId) {

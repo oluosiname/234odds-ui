@@ -25,6 +25,9 @@ ReactDOM.render(
               <Route exact path="/competitions/:competition">
                 <Home />
               </Route>
+              <Route exact path="/country/:country">
+                <Home />
+              </Route>
             </main>
           </React.Fragment>
         </Provider>

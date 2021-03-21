@@ -3,6 +3,7 @@ import parameterize from "parameterize";
 
 import EventLine from "./EventLine";
 import CloudImage from "../../components/CloudImage";
+import { Link } from "react-router-dom";
 
 const EventsBlock = ({ data, setSelectedEventId }) => {
   return (
@@ -15,8 +16,13 @@ const EventsBlock = ({ data, setSelectedEventId }) => {
                 name={parameterize(competition)}
                 className="w-4 h-5 max-w-none object-contain"
               />
-              <span className="uppercase">{competition}</span>
+              <Link to={`/competitions/${competition}`}>
+                <span className="uppercase hover:text-blue-100">
+                  {competition}
+                </span>
+              </Link>
             </div>
+
             {events.map(({ day, day_events }) => {
               return (
                 <div key={day}>
