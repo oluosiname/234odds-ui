@@ -12,6 +12,7 @@ import EventDetails from "../../components/EventDetails";
 import Filters from "../../components/filters";
 import { stringifyDate } from "../../helpers/dates";
 import NewsItem from "../../components/NewsItem";
+import SideLinks from "../../components/SideLinks";
 
 const Index = () => {
   const [data, setData] = useState([]);
@@ -66,21 +67,15 @@ const Index = () => {
     }
   };
 
-  const countries = ["england", "germany", "europe", "international", "africa"];
-
   return (
     <div className="font-roboto  ipad:w-full lg:w-9/12 md:m-auto bg-brand-primary-100 shadow-2xl rounded border border-gray-300">
       <HeaderLinks competition={competition} />
       <section className="events flex flex-wrap justify-between shadow-2xl">
         <section
-          id="event-list"
-          className="w-full md:w-1/6  border-r border-gray-300"
+          id="country-list"
+          className="md:w-1/6  border-r border-gray-300 hidden md:block"
         >
-          <ul>
-            {countries.map((country) => {
-              return <li key={country}>{country}</li>;
-            })}
-          </ul>
+          <SideLinks />
         </section>
         <section
           id="event-list"

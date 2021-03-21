@@ -7,12 +7,12 @@ import CloudImage from "../../components/CloudImage";
 const EventLine = ({ event, setSelectedEventId }) => {
   return (
     <>
-      <Link to={`/events/${event.uid}`} className="md:hidden">
+      <Link to={`/events/${event.uid}`} className="md:hidden cursor-pointer">
         <EventBody event={event} />
       </Link>
       <section
         to={`/events/${event.uid}`}
-        className="hidden md:block"
+        className="hidden md:block cursor-pointer"
         onClick={() => setSelectedEventId(event.uid)}
       >
         <EventBody event={event} />

@@ -60,7 +60,7 @@ const HeaderPill = ({ competition, selectedCompetition, icon = null }) => {
         />
       )}
 
-      <span>{competition}</span>
+      <span className="hover:text-blue-100">{competition}</span>
     </div>
   );
 };
