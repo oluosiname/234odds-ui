@@ -15,41 +15,53 @@ const HeaderLinks = ({ competition: selectedCompetition }) => {
     "Europa League",
   ];
 
-  function isSelected(competition) {
-    return selectedCompetition === competition;
-  }
-
   return (
-    <section className="flex space-x-2  text-xs px-3 py-3 pt-3.5 max-w-full overflow-x-scroll md:overflow-x-hidden md:space-x-3 text-white bg-brand-primary-100 ">
+    <section className=" md:flex hidden text-xs px-3 py-3 pt-3.5 max-w-full overflow-x-scroll potrait:overflow-x-scroll  md:overflow-x-hidden text-white bg-brand-primary-100 justify-between ">
       <Link to="/">
-        <div
-          className={`flex py-1.5 px-3 rounded-3xl uppercase text-xxs font-medium tracking-wide whitespace-nowrap items-center bg-gray-200 space-x-2 cursor-pointer  ${
-            selectedCompetition ? "" : "border  border-blue-100"
-          }`}
-        >
-          <Icon name={`icon-world`} className="w-4" color="#ffffff" />
-          <span>All</span>
-        </div>
+        <HeaderPill
+          competition={"All"}
+          selectedCompetition={selectedCompetition}
+          icon="icon-all"
+        />
       </Link>
       {competitions.map((competition) => {
         return (
           <Link to={`/competitions/${competition}`} key={competition}>
-            <div
-              className={`flex py-1.5 px-3 rounded-3xl uppercase text-xxs font-medium tracking-wide whitespace-nowrap items-center bg-gray-200 space-x-2 cursor-pointer  ${
-                isSelected(competition) ? "border  border-blue-100" : ""
-              }`}
-            >
-              <CloudImage
-                name={parameterize(competition)}
-                className="w-4 h-5 max-w-none object-contain"
-              />
-
-              <span>{competition}</span>
-            </div>
+            <HeaderPill
+              competition={competition}
+              selectedCompetition={selectedCompetition}
+            />
           </Link>
         );
       })}
     </section>
+  );
+};
+
+const HeaderPill = ({ competition, selectedCompetition, icon = null }) => {
+  function isSelected(competition) {
+    if (competition === "All" && !selectedCompetition) {
+      return true;
+    }
+    return selectedCompetition === competition;
+  }
+
+  return (
+    <div
+      className={`flex py-2 px-5 rounded-3xl uppercase text-xxs font-medium tracking-wide whitespace-nowrap items-center bg-gray-200 space-x-4 cursor-pointer  ${
+        isSelected(competition) ? "border  border-blue-100" : ""
+      }`}
+    >
+      {icon && <Icon name={icon} className="w-4" color="#ffffff" />}
+      {!icon && (
+        <CloudImage
+          name={parameterize(competition)}
+          className="w-4 h-5 max-w-none object-contain"
+        />
+      )}
+
+      <span>{competition}</span>
+    </div>
   );
 };
 
