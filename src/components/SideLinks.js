@@ -12,7 +12,7 @@ const SideLinks = (props) => {
     "germany",
     "france",
     "europe",
-    "netherland",
+    "netherlands",
     "nigeria",
     "belgium",
     "brazil",

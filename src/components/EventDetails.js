@@ -34,7 +34,7 @@ const EventDetails = ({ event }) => {
   }
 
   return (
-    <div className="bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8">
+    <div className="bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 md:mb-10 ipad:px-1">
       <section className="px-5 bg-stadium">
         <div className="text-center py-3 text-xs">
           {" "}
@@ -110,7 +110,7 @@ const EventDetails = ({ event }) => {
         </div>
       </div> */}
       <div className="flex p-2 items-center">
-        <span className="w-1/3 text-gray-100 uppercase text-xs space-x-4"></span>
+        <span className="w-1/3 text-gray-100 uppercase text-xs space-x-4 ipad:space-x-1"></span>
         <div className="w-2/3 flex space-x-8 justify-end font-medium">
           <span className="px-3 py-3">1</span>
           <span className="px-3 py-3">X</span>
@@ -127,7 +127,7 @@ const EventDetails = ({ event }) => {
                 alt={bookmaker_odds.bookmaker}
               />
             </div>
-            <div className="w-2/3 text-xs text-gray-100 space-x-3 flex text-white justify-end font-medium">
+            <div className="w-2/3 text-xs text-gray-100 space-x-3 ipad:space-x-1 flex text-white justify-end font-medium">
               <span
                 className={`${
                   event.top_odds.home === bookmaker_odds.home
