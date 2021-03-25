@@ -74,7 +74,7 @@ const Index = () => {
       <section className="events flex flex-wrap justify-between shadow-2xl">
         <section
           id="country-list"
-          className="md:w-1/6  border-r border-gray-300 hidden md:block"
+          className="md:w-1/6  border-r border-gray-300 hidden md:block border-b border-brand-primary-200"
         >
           <SideLinks />
         </section>
@@ -91,7 +91,10 @@ const Index = () => {
           <EventsBlock data={data} setSelectedEventId={setSelectedEventId} />
         </section>
 
-        <section id="event-details" className="w-full md:w-2/6 hidden md:block">
+        <section
+          id="event-details"
+          className="w-full md:w-2/6 hidden md:block border-b border-brand-primary-200"
+        >
           <EventDetails event={selectedEvent} />
           <ul className="bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 h-screen">
             {news.map((article) => {
@@ -104,7 +107,7 @@ const Index = () => {
           </ul>
         </section>
       </section>
-      <footer className=" text-white text-center p-1 md:px-5">
+      <footer className=" text-gray-100 text-center p-1 md:px-5 py-4 ">
         <h6 className="text-sm mb-2 font-medium">
           Welcome To 234Odds - Compare Latest Football Betting Odds from
           Nigerian Bookmakers.
