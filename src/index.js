@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home/Index";
 import Event from "./pages/Event/index";
+import Footer from "./components/Footer";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,7 +16,7 @@ ReactDOM.render(
       <Switch>
         <Provider store={store}>
           <React.Fragment>
-            <main className="bg-black min-h-screen h-100 md:pt-12 ">
+            <main className="bg-black min-h-screen h-100 md:pt-12 font-roboto">
               <Route exact path="/">
                 <Home />
               </Route>
@@ -28,6 +29,7 @@ ReactDOM.render(
               <Route exact path="/country/:country">
                 <Home />
               </Route>
+              <Footer />
             </main>
           </React.Fragment>
         </Provider>
