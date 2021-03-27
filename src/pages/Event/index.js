@@ -1,28 +1,18 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
 import EventDetails from "../../components/EventDetails";
+import { getEvent } from "../../redux/events/events-reducer";
 
 const Index = () => {
   let { eventId } = useParams();
-  const [event, setEvent] = useState({});
+
+  const dispatch = useDispatch(); //this hook gives us dispatch method
+  const { event } = useSelector(({ eventsReducer }) => eventsReducer);
 
   useEffect(() => {
-    (async () => {
-      const res = await axios.get(
-        `${process.env.REACT_APP_API_URL}/events/${eventId}`,
-        {
-          headers: { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}` },
-        }
-      );
-      setEvent(res.data.event);
-    })();
-
-    return () => {
-      // cleanup;
-    };
-  }, [eventId]);
+    dispatch(getEvent(eventId));
+  }, [eventId, dispatch]);
 
   return <EventDetails event={event} />;
 };

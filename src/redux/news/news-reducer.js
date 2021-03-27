@@ -8,7 +8,6 @@ export const getNews = () => {
       "https://site.api.espn.com/apis/site/v2/sports/soccer/all/news?limit=5"
     );
 
-    console.log("all data", res.data);
     dispatch({ type: FETCH_NEWS, payload: res.data.articles });
   };
 };

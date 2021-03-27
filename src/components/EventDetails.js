@@ -31,7 +31,9 @@ const EventDetails = ({ event }) => {
   }
 
   if (!event.uid) {
-    return <div></div>;
+    return (
+      <div className="bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 md:mb-10 ipad:px-1 border-gray-300 border-b pb-3 min-h-loading"></div>
+    );
   }
 
   return (

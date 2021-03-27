@@ -1,7 +1,15 @@
 import React from "react";
 import "./style.css";
 
-const index = () => {
+import { useSelector } from "react-redux";
+
+const Index = () => {
+  const { isFetching } = useSelector(({ eventsReducer }) => eventsReducer);
+  console.log("isFetching", isFetching);
+  if (!isFetching) {
+    return <div></div>;
+  }
+
   return (
     <div className="lds-ring">
       <div></div>
@@ -12,4 +20,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

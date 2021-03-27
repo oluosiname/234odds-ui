@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getNews } from "../../redux/news/news-reducer";
-
-import axios from "axios";
+import { getEvents, getEvent } from "../../redux/events/events-reducer";
 
 import HeaderLinks from "./HeaderLinks";
 import EventsBlock from "./EventsBlock";
@@ -15,7 +14,6 @@ import NewsItem from "../../components/NewsItem";
 import SideLinks from "../../components/SideLinks";
 
 const Index = () => {
-  const [data, setData] = useState([]);
   const [date, setDate] = useState();
 
   const [search, setSearch] = useState();
@@ -23,40 +21,31 @@ const Index = () => {
   let { competition } = useParams();
   let { country } = useParams();
 
-  const [selectedEvent, setSelectedEvent] = useState({});
   const [selectedEventId, setSelectedEventId] = useState();
 
   const dispatch = useDispatch(); //this hook gives us dispatch method
   const { news } = useSelector(({ newsReducer }) => newsReducer);
-
-  useEffect(() => {
-    (async () => {
-      const res = await axios.get(`${process.env.REACT_APP_API_URL}/events`, {
-        params: { competition, search, country, date: stringifyDate(date) },
-        headers: { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}` },
-      });
-      setData(res.data);
-    })();
-  }, [competition, date, search, country]);
+  const { events } = useSelector(({ eventsReducer }) => eventsReducer);
+  const { event: selectedEvent } = useSelector(
+    ({ eventsReducer }) => eventsReducer
+  );
 
   useEffect(() => {
     if (!selectedEventId) {
       return;
     }
-    (async () => {
-      const res = await axios.get(
-        `${process.env.REACT_APP_API_URL}/events/${selectedEventId}`,
-        {
-          headers: { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}` },
-        }
-      );
-      setSelectedEvent(res.data.event);
-    })();
-  }, [selectedEventId]);
+    dispatch(getEvent(selectedEventId));
+  }, [selectedEventId, dispatch]);
 
   useEffect(() => {
     dispatch(getNews());
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(
+      getEvents({ competition, search, country, date: stringifyDate(date) })
+    );
+  }, [dispatch, competition, search, country, date]);
 
   const handleChange = (value) => {
     if (value && value.length > 2) {
@@ -88,7 +77,7 @@ const Index = () => {
             handleChange={handleChange}
             search={search}
           />
-          <EventsBlock data={data} setSelectedEventId={setSelectedEventId} />
+          <EventsBlock data={events} setSelectedEventId={setSelectedEventId} />
         </section>
 
         <section
