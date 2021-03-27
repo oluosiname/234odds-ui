@@ -13,7 +13,6 @@ import Filters from "../../components/filters";
 import { stringifyDate } from "../../helpers/dates";
 import NewsItem from "../../components/NewsItem";
 import SideLinks from "../../components/SideLinks";
-import Footer from "../../components/Footer";
 
 const Index = () => {
   const [data, setData] = useState([]);
@@ -81,7 +80,7 @@ const Index = () => {
         </section>
         <section
           id="event-list"
-          className="w-full md:w-3/6  border-r border-gray-300"
+          className="w-full md:w-3/6  border-r border-gray-300 min-h-loading"
         >
           <Filters
             date={date}

@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home/Index";
 import Event from "./pages/Event/index";
 import Footer from "./components/Footer";
+import Loader from "./components/Loader";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Provider store={store}>
           <React.Fragment>
             <main className="bg-black min-h-screen h-100 md:pt-12 font-roboto">
+              <Loader />
               <Route exact path="/">
                 <Home />
               </Route>

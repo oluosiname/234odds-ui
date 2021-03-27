@@ -67,6 +67,10 @@ module.exports = {
         },
         // => @media (orientation: portrait) { ... }
       },
+
+      minHeight: {
+        loading: "65vh",
+      },
     },
   },
   variants: {
