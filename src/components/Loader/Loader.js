@@ -3,7 +3,7 @@ import "./style.css";
 
 import { useSelector } from "react-redux";
 
-const Index = () => {
+const Loader = () => {
   const { isFetching } = useSelector(({ eventsReducer }) => eventsReducer);
 
   if (!isFetching) {
@@ -20,4 +20,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Loader;

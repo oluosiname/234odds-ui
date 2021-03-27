@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home/Index";
 import Event from "./pages/Event/index";
 import Footer from "./components/Footer";
-import Loader from "./components/Loader/Index";
+import Loader from "./components/Loader/Loader";
 import MobileMenu from "./components/MobileMenu";
 
 ReactDOM.render(
