@@ -4,6 +4,8 @@ import { ReactComponent as IconCalendar } from '../images/icon-calendar.svg';
 import { ReactComponent as IconCalendars } from '../images/icon-calendars.svg';
 import { ReactComponent as IconCancel } from '../images/icon-cancel.svg';
 import { ReactComponent as IconClose } from '../images/icon-close.svg';
+import { ReactComponent as IconMenu } from '../images/icon-menu.svg';
+import { ReactComponent as IconMenus } from '../images/icon-menus.svg';
 import { ReactComponent as IconSearch } from '../images/icon-search.svg';
 import { ReactComponent as IconToday } from '../images/icon-today.svg';
 import { ReactComponent as IconUndo } from '../images/icon-undo.svg';
@@ -16,6 +18,8 @@ export default {
 "icon-calendars": IconCalendars, 
 "icon-cancel": IconCancel, 
 "icon-close": IconClose, 
+"icon-menu": IconMenu, 
+"icon-menus": IconMenus, 
 "icon-search": IconSearch, 
 "icon-today": IconToday, 
 "icon-undo": IconUndo, 

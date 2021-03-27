@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 const Index = () => {
   const { isFetching } = useSelector(({ eventsReducer }) => eventsReducer);
-  console.log("isFetching", isFetching);
+
   if (!isFetching) {
     return <div></div>;
   }
