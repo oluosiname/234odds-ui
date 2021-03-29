@@ -84,16 +84,23 @@ const Index = () => {
           id="event-details"
           className="w-full md:w-2/6 hidden md:block border-b border-brand-primary-200"
         >
-          <EventDetails event={selectedEvent} />
-          <ul className="bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 h-screen">
-            {news.map((article) => {
-              return (
-                <li key={article.headline} className="mb-8">
-                  <NewsItem article={article} />
-                </li>
-              );
-            })}
-          </ul>
+          {selectedEventId && (
+            <EventDetails
+              event={selectedEvent}
+              setSelectedEventId={setSelectedEventId}
+            />
+          )}
+          {!selectedEventId && (
+            <ul className="bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 h-screen">
+              {news.map((article) => {
+                return (
+                  <li key={article.headline} className="mb-8">
+                    <NewsItem article={article} />
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </section>
       </section>
     </div>

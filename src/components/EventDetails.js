@@ -7,9 +7,9 @@ import bet9ja from "../assets/images/bet9ja.png";
 import naijabet from "../assets/images/naijabet.png";
 import merrybet from "../assets/images/merrybet.svg";
 import betking from "../assets/images/betking.svg";
-import Footer from "./Footer";
+import Icon from "./Icon/Icon";
 
-const EventDetails = ({ event }) => {
+const EventDetails = ({ event, setSelectedEventId }) => {
   const bookmakers = {
     nairabet: nairabet,
     bet9ja: bet9ja,
@@ -37,7 +37,10 @@ const EventDetails = ({ event }) => {
   }
 
   return (
-    <div className="bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 md:mb-10 ipad:px-1 border-gray-300 border-b pb-3">
+    <div className="md:sticky md:top-0 bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 md:mb-10 ipad:px-1 border-gray-300 border-b pb-3">
+      <header className="pb-2 flex justify-end cursor-pointer">
+        <Icon name="icon-close" onClick={() => setSelectedEventId(null)} />
+      </header>
       <section className="px-5 bg-stadium">
         <div className="text-center py-3 text-xs">
           {" "}
