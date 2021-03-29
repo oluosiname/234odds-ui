@@ -29,7 +29,7 @@ const SideLinks = (props) => {
   ];
 
   return (
-    <ul className="p-3 pt-0 text-white text-xs">
+    <ul className="text-white md:text-xs text-sm border-t md:border-0 border-gray-100 border-opacity-5">
       {countries.map((country) => {
         return <SideLink country={country} key={country} />;
       })}
@@ -41,12 +41,12 @@ SideLinks.propTypes = {};
 
 const SideLink = ({ country }) => {
   return (
-    <li className="p-3">
+    <li className="md:p-3 py-3 px-3 border-b border-gray-300 md:border-0 ">
       <Link
         to={`/country/${country}`}
         className="capitalize hover:text-blue-100 cursor-pointer flex space-x-6 ipad:space-x-2 items-center"
       >
-        <CloudImage name={parameterize(country)} className="h-4 w-4" />
+        <CloudImage name={parameterize(country)} className="h-5 w-5" />
         <span>{country}</span>
       </Link>
     </li>
