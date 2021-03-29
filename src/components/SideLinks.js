@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import CloudImage from "./CloudImage";
 import parameterize from "parameterize";
+import { useDispatch } from "react-redux";
+import { CLOSE_MENU } from "../redux/app/app-reducer";
 import { Link } from "react-router-dom";
 
 const SideLinks = (props) => {
@@ -40,11 +42,13 @@ const SideLinks = (props) => {
 SideLinks.propTypes = {};
 
 const SideLink = ({ country }) => {
+  const dispatch = useDispatch();
   return (
     <li className="md:p-3 py-3 px-3 border-b border-gray-300 md:border-0 ">
       <Link
         to={`/country/${country}`}
         className="capitalize hover:text-blue-100 cursor-pointer flex space-x-6 ipad:space-x-2 items-center"
+        onClick={() => dispatch({ type: CLOSE_MENU })}
       >
         <CloudImage name={parameterize(country)} className="h-5 w-5" />
         <span>{country}</span>
