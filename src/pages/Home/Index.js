@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Helmet } from "react-helmet";
 
 import { getNews } from "../../redux/news/news-reducer";
 import { getEvents, getEvent } from "../../redux/events/events-reducer";
@@ -10,6 +11,7 @@ import EventsBlock from "./EventsBlock";
 import EventDetails from "../../components/EventDetails";
 import Filters from "../../components/filters";
 import { stringifyDate } from "../../helpers/dates";
+import { capitalize } from "../../helpers/strings";
 import NewsItem from "../../components/NewsItem";
 import SideLinks from "../../components/SideLinks";
 
@@ -59,6 +61,23 @@ const Index = () => {
 
   return (
     <div className="font-roboto  ipad:w-full lg:w-9/12 md:m-auto bg-brand-primary-100 shadow-2xl rounded border border-gray-300 rounded-b-none">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content={`Compare  ${competition} betting odds from Nigerian bookmakers before placing your bets to optimize your winnings`}
+        />
+        {competition && (
+          <title>{`${capitalize(
+            competition
+          )} - Compare Betting Odds from Nigerian Bookmakers on 234Odds`}</title>
+        )}
+        {country && (
+          <title>{`${capitalize(
+            country
+          )} - Compare Betting Odds from Nigerian Bookmakers on 234Odds`}</title>
+        )}
+      </Helmet>
       <HeaderLinks competition={competition} />
       <section className="events flex flex-wrap justify-between shadow-2xl">
         <section

@@ -8,6 +8,7 @@ import naijabet from "../assets/images/naijabet.png";
 import merrybet from "../assets/images/merrybet.svg";
 import betking from "../assets/images/betking.svg";
 import Icon from "./Icon/Icon";
+import { Helmet } from "react-helmet";
 
 const EventDetails = ({ event, setSelectedEventId }) => {
   const bookmakers = {
@@ -38,6 +39,15 @@ const EventDetails = ({ event, setSelectedEventId }) => {
 
   return (
     <div className="md:sticky md:top-0 bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 md:mb-10 ipad:px-1 border-gray-300 border-b pb-3">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content={`Compare betting odds from Nigerian bookmakers for ${event.home_team} vs ${event.home_team} in ${event.competition} before placing your bets to optimize your winnings`}
+        />
+        <title>{`${event.home_team} vs ${event.away_team} | Compare Nigerian Bookmaker Betting Odds on 234Odds.com `}</title>
+      </Helmet>
+
       <header className="hidden md:flex pb-2  justify-end cursor-pointer">
         <Icon name="icon-close" onClick={() => setSelectedEventId(null)} />
       </header>
