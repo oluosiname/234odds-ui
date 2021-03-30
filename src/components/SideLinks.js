@@ -50,7 +50,11 @@ const SideLink = ({ country }) => {
         className="capitalize hover:text-blue-100 cursor-pointer flex space-x-6 ipad:space-x-2 items-center"
         onClick={() => dispatch({ type: CLOSE_MENU })}
       >
-        <CloudImage name={parameterize(country)} className="h-5 w-5" />
+        <CloudImage
+          name={parameterize(country)}
+          className="h-5 w-5"
+          fallback="default"
+        />
         <span>{country}</span>
       </Link>
     </li>

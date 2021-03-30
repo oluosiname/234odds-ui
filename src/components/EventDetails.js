@@ -38,7 +38,7 @@ const EventDetails = ({ event, setSelectedEventId }) => {
 
   return (
     <div className="md:sticky md:top-0 bg-brand-primary-100 w-full text-sm text-gray-100 font-roboto md:px-8 md:mb-10 ipad:px-1 border-gray-300 border-b pb-3">
-      <header className="pb-2 flex justify-end cursor-pointer">
+      <header className="hidden md:flex pb-2  justify-end cursor-pointer">
         <Icon name="icon-close" onClick={() => setSelectedEventId(null)} />
       </header>
       <section className="px-5 bg-stadium">

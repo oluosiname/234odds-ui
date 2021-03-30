@@ -1,7 +1,7 @@
 import React from "react";
 import { Image } from "cloudinary-react";
 
-const CloudImage = ({ name, className, width, height }) => {
+const CloudImage = ({ name, className, width, height, fallback }) => {
   return (
     <Image
       cloudName="uniodds"
@@ -10,12 +10,14 @@ const CloudImage = ({ name, className, width, height }) => {
       quality="auto"
       width={width}
       crop="scale"
+      defaultImage={`icon-${fallback}.png`}
     />
   );
 };
 
 CloudImage.defaultProps = {
   width: "32",
+  fallback: "club",
 };
 
 export default CloudImage;
