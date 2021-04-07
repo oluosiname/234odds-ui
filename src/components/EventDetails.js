@@ -125,7 +125,7 @@ const EventDetails = ({ event, setSelectedEventId }) => {
           })}
         </div>
       </div> */}
-      <div className="flex p-2 items-center">
+      <div className="flex p-2 px-4 items-center">
         <span className="w-1/3 text-gray-100 uppercase text-xs space-x-4 ipad:space-x-1"></span>
         <div className="w-2/3 flex space-x-8 justify-end font-medium">
           <span className="px-3 py-3">1</span>
@@ -135,7 +135,7 @@ const EventDetails = ({ event, setSelectedEventId }) => {
       </div>
       {event.odds.map((bookmaker_odds, i) => {
         return (
-          <div className="flex p-1.5 items-center" key={i.toString()}>
+          <div className="flex p-1.5 px-3 items-center" key={i.toString()}>
             <div className="w-1/3">
               <img
                 src={bookmakers[bookmaker_odds.bookmaker]}
