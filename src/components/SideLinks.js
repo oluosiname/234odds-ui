@@ -19,15 +19,15 @@ const SideLinks = (props) => {
     "belgium",
     "russia",
     "scotland",
+    "turkey",
     "south america",
     "brazil",
     "north america",
     "USA",
     "asia",
     "international",
-    "world",
-    "africa",
-    "nigeria",
+    // "world",
+    // "africa",
   ];
 
   return (
