@@ -16,8 +16,8 @@ const NewsItem = ({ article }) => {
     >
       <div className="w-1/3 md:w-full ipad:w-full lg:w-1/3 ipad-landscape:w-1/3">
         <img
-          src={image.url}
-          alt={image.caption}
+          src={image?.url}
+          alt={image?.caption}
           className="min-h-full object-cover"
         />
       </div>
